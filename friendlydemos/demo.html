@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+<meta content="utf-8" http-equiv="encoding">
+<style>
+    body { margin:0; padding:0; overflow:hidden; margin-top:20;}
+</style>
+</head>
+<body bgcolor="Black">
+<font color="White">
+<script src="SnowBall/AudioManager.js"></script>
+<script src="SnowBall/AudioClasses.js"></script>
+<canvas id="laCanvas" width="400" height="200"></canvas>
+<P>Volume<input type="range" min="0" max="100" value="70" class="slider" oninput="musicLoop.setVolume(this.value/100);"><P/>
+<button onclick="musicLoop.play();">Play</button>
+<button onclick="musicLoop.stop();">Stop</button>
+<button onclick="startDanger();">Danger</button>
+<button onclick="endDanger();">Safe</button>
+<P>Time<input type="range" min="0" max="1" value="0" class="slider" step="0.001" id="time_slider"><P/>
+<button onclick="speed = 0.5;">x0.5</button>
+<button onclick="speed = 1;">x1</button>
+<button onclick="speed = 2;">x2</button>
+<button onclick="speed = 3;">x3</button>
+<p></p>
+
+<script>
+setFormat();
+setAudioPath("Audio/");
+
+var canvas = document.getElementById('laCanvas');
+var canvasContext = canvas.getContext('2d');
+
+var sky = new Image(400, 400);
+sky.src = "Img/demo-mdf.png"
+
+var timeSlider = document.getElementById("time_slider");
+var time = 0;
+
+var day1 = new MusicClip("mdfewkes-demo_Day1", 8.000);
+var day2 = new MusicClip("mdfewkes-demo_Day2", 8.000);
+var day3 = new MusicClip("mdfewkes-demo_Day3", 8.000);
+var night1 = new MusicClip("mdfewkes-demo_Night1", 8.000);
+var night2 = new MusicClip("mdfewkes-demo_Night2", 8.000);
+var night3 = new MusicClip("mdfewkes-demo_Night3", 8.000);
+var danger = new musicClipOverlap("mdfewkes-demo_Danger", 8.000);
+
+var sec1 = new musicContainer([day1, night1]);
+var sec2 = new musicContainer([day2, night2]);
+var sec3 = new musicContainer([day3, night3]);
+
+var mainMusic = new musicContainerSequence([sec1, sec2, sec3]);
+
+var musicLoop = new musicContainerLoop([mainMusic, danger]);
+
+function setDay() {
+	sec1.setCurrentClip(0);
+	sec2.setCurrentClip(0);
+	sec3.setCurrentClip(0);
+}
+
+function setNight() {
+	sec1.setCurrentClip(1);
+	sec2.setCurrentClip(1);
+	sec3.setCurrentClip(1);
+}
+
+function startDanger() {
+	musicLoop.setCurrentClip(1);
+}
+
+function endDanger() {
+	musicLoop.setCurrentClip(0);
+}
+
+function drawBitmapCenteredAtLocationWithRotation(graphic, atX, atY,withAngle) {
+	canvasContext.save(); // allows us to undo translate movement and rotate spin
+	canvasContext.translate(atX,atY); // sets the point where our graphic will go
+	canvasContext.rotate(withAngle); // sets the rotation
+	canvasContext.drawImage(graphic,-graphic.width/2,-graphic.height/2); // center, draw
+	canvasContext.restore(); // undo the translation movement and rotation since save()
+}
+
+window.onload = function() {
+	setNight();
+
+	musicLoop.setVolume(0.7);
+
+	requestAnimationFrame(mainLoop);
+}
+
+var now = window.performance.now();
+var then = window.performance.now();
+var deltaTime = 0;
+var speed = 1;
+
+function mainLoop() {
+	AudioEventManager.updateEvents();
+
+	then = now;
+	now = window.performance.now();
+	deltaTime = now - then;
+
+	time += deltaTime/60000*speed;
+	if (time >= 1) {
+		time = 0;
+	} else if (time >= 0.65) {
+		setNight();
+	} else if (time >= 0.15) {
+		setDay();
+	}
+
+	timeSlider.value = time;
+
+	drawBitmapCenteredAtLocationWithRotation(sky, 200, 200, time*6.28)
+
+	requestAnimationFrame(mainLoop);
+}
+
+</script>
+
+</body>
+</html>  
