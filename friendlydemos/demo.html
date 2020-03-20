@@ -4,7 +4,7 @@
 <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <meta content="utf-8" http-equiv="encoding">
 <style>
-    body { margin:0; padding:0; overflow:hidden; margin-top:20;}
+	body { margin:0; padding:0; overflow:hidden; margin-top:20;}
 </style>
 </head>
 <body bgcolor="Black">
@@ -15,16 +15,18 @@
 <P>Volume<input type="range" min="0" max="100" value="70" class="slider" oninput="musicLoop.setVolume(this.value/100);"><P/>
 <button onclick="musicLoop.play();">Play</button>
 <button onclick="musicLoop.stop();">Stop</button>
-<button onclick="startDanger();">Danger</button>
-<button onclick="endDanger();">Safe</button>
+<button onclick="startDanger();inDanger = true;">Danger</button>
+<button onclick="endDanger();inDanger = false;">Safe</button>
 <P>Time<input type="range" min="0" max="1" value="0" class="slider" step="0.001" id="time_slider"><P/>
 <button onclick="speed = 0.5;">x0.5</button>
 <button onclick="speed = 1;">x1</button>
 <button onclick="speed = 2;">x2</button>
 <button onclick="speed = 3;">x3</button>
 <br>
-<p>By sequencing short, pre-recorded, music clips (a technique called: Horizontal Resequencing)</p>
-<p>this music system dynamically switches between a day and a night version of the same song,</p>
+<p>By sequencing short, pre-recorded, music clips </p>
+<p>(a technique called: Horizontal Resequencing)</p>
+<p>this music system dynamically switches between</p>
+<p>a day and a night version of the same song,</p>
 <p>and a separate clip for when danger is near.</p>
 
 <script>
@@ -36,11 +38,12 @@ var canvasContext = canvas.getContext('2d');
 
 var sky = new Image(400, 400);
 sky.src = "Img/demo-mdf.png";
-var danger = new Image(400, 400);
-danger.src = "Img/danger.png
+var dangerImg = new Image(20, 20);
+dangerImg.src = "Img/danger.png";
 
 var timeSlider = document.getElementById("time_slider");
 var time = 0;
+var inDanger = false;
 
 var day1 = new MusicClip("mdfewkes-demo_Day1", 8.000);
 var day2 = new MusicClip("mdfewkes-demo_Day2", 8.000);
@@ -118,9 +121,9 @@ function mainLoop() {
 	timeSlider.value = time;
 
 	drawBitmapCenteredAtLocationWithRotation(sky, 200, 200, time*6.28);
-    if (musicLoop.getCurrentClip(1)) {
-        drawBitmapCenteredAtLocationWithRotation(danger, 390, 10, 0);
-}
+	if (inDanger) {
+		drawBitmapCenteredAtLocationWithRotation(dangerImg, 390, 10, musicLoop.getTime()/8*6.28);
+	}
 
 	requestAnimationFrame(mainLoop);
 }
