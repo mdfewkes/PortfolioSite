@@ -35,7 +35,9 @@ var canvas = document.getElementById('laCanvas');
 var canvasContext = canvas.getContext('2d');
 
 var sky = new Image(400, 400);
-sky.src = "Img/demo-mdf.png"
+sky.src = "Img/demo-mdf.png";
+var danger = new Image(400, 400);
+danger.src = "Img/danger.png
 
 var timeSlider = document.getElementById("time_slider");
 var time = 0;
@@ -115,7 +117,10 @@ function mainLoop() {
 
 	timeSlider.value = time;
 
-	drawBitmapCenteredAtLocationWithRotation(sky, 200, 200, time*6.28)
+	drawBitmapCenteredAtLocationWithRotation(sky, 200, 200, time*6.28);
+    if (musicLoop.getCurrentClip(1)) {
+        drawBitmapCenteredAtLocationWithRotation(danger, 390, 10, 0);
+}
 
 	requestAnimationFrame(mainLoop);
 }
