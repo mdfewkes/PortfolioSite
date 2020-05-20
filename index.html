@@ -32,6 +32,26 @@
 				margin: 20px;
 				background-color: #f4f4f4;
 			}
+			.thumbcase {
+				width: 400px;
+				height: 300px;
+				position: relative;
+				display: inline-block;
+			}
+			.thumbcase .thumbhover {
+				top: 0;
+				left: 0;
+				display: none;
+				position: absolute;
+				z-index: 99;
+			}
+			.card:hover .thumbhover {
+				display: inline;
+			}
+			img {
+				width: 400px;
+				height: 300px;
+			}
 		</style>
 	</head>
 	<body>
@@ -41,41 +61,81 @@
 							Sound, Music, Recording, and Programming<br>
 							for Games, Film, Animation, and Theatre</div>
 		<br>
-		<div class="primarySelector">Games, Theatre, Animation</div>
+		<div class="primarySelector" style="visibility: hidden;">Games, Theatre, Animation</div>
 		<div class="gamesSelector">Audio Coder, Technical, Music, Sound Design, And More</div>
 		<div class="introText"></div>
 		<div class="cardTable">
 
-			<div class="card" coder=true sound=true><a href="https://store.steampowered.com/app/827220/Overclocked_The_Aclockalypse/">Overclocked: The Aclockalypse</a></div>
+			<div class="card" style="--coder:true; --sound:true;" id="Overclocked">
+				<a href="https://store.steampowered.com/app/827220/Overclocked_The_Aclockalypse/">Overclocked: The Aclockalypse</a>
+			</div>
 
-			<div class="card" coder=true music=true><a href="https://spadxiii.itch.io/towers-of-space">Towers of Space</a></div>
+			<div class="card" style="--coder:true; --music:true;" id="TowersOfSpace">
+				<a href="https://spadxiii.itch.io/towers-of-space">Towers of Space</a>
+			</div>
 
-			<div class="card" more=true coder=true sound=true implement=true><a href="https://lanthos.itch.io/sea-officially-lost">Sea: Officially Lost</a></div>
+			<div class="card" style="--more:true; --coder:true; --sound:true; --implement:true;" id="SeaOfficiallyLost">
+				<a href="https://lanthos.itch.io/sea-officially-lost">Sea: Officially Lost</a>
+			</div>
 
-			<div class="card" sound=true implement=true><a href="https://store.steampowered.com/app/471200/Melody/">Melody</a></div>
+			<div class="card" style="--sound:true; --implement:true;" id="Melody">
+				<a href="https://store.steampowered.com/app/471200/Melody/">Melody</a>
+			</div>
 
-			<div class="card" music=true implement=true><a href="https://brnielsen.itch.io/operationlifeline">Operation Lifeline</a></div>
+			<div class="card" style="--music:true; --implement:true;" id="">
+				<a href="https://brnielsen.itch.io/operationlifeline">Operation Lifeline</a>
+			</div>
 
-			<div class="card" music=true sound=true implement=true><a href="https://gamkedo.itch.io/hidden-passageways">Hidden Passageways</a></div>
+			<div class="card" style="--music:true; --sound:true; --implement:true;" id="OperationLifeline">
+				<a href="https://gamkedo.itch.io/hidden-passageways">Hidden Passageways</a>
+			</div>
 
-			<div class="card" coder=true music=true sound=true implement=true>Psyche</div>
+			<div class="card" style="--coder:true; --music:true; --sound:true; --implement:true;" id="Psyche">
+				Psyche
+			</div>
 
-			<div class="card" coder=true><a href="https://klaim.itch.io/radiant-laser-cross">Radiant Laser Cross</a></div>
+			<div class="card" style="--coder:true;" id="RadiantLaserCross">
+				<a href="https://klaim.itch.io/radiant-laser-cross">Radiant Laser Cross</a>
+			</div>
 
-			<div class="card" more=true coder=true implement=true><a href="https://mdfewkes.itch.io/artillery-fodder"><img src="https://img.itch.zone/aW1nLzMwNzg4NTAuZ2lm/180x143%23c/a2bzON.gif">Artillery Fodder</a></div>
+			<div class="card" style="--more:true; --coder:true; --implement:true;" id="ArtilleryFodder">
+				<a href="https://mdfewkes.itch.io/artillery-fodder">
+				<div class="thumbcase">
+					<img src="IMG/ArtilleryFodderHold.gif">
+					<img src="IMG/ArtilleryFodderHover.gif" class="thumbhover">
+				</div>
+				Artillery Fodder</a>
+			</div>
 
-			<div class="card" coder=true implement=true>Flipside</div>
+			<div class="card" style="--coder:true; --implement:true;" id="Flipside">
+				Flipside
+			</div>
 
-			<div class="card" more=true coder=true music=true sound=true implement=true><a href="https://lanthos.itch.io/we-must-prepare">We Must Prepare</a></div>
+			<div class="card" style="--more:true; --coder:true; --music:true; --sound:true; --implement:true;" id="WeMustPrepare">
+				<a href="https://lanthos.itch.io/we-must-prepare">We Must Prepare</a>
+			</div>
 
-			<div class="card" coder=true sound=true implement=true><a href="https://gamkedo.itch.io/dream-racer">Dream Racer</a></div>
+			<div class="card" style="--coder:true; --sound:true; --implement:true;" id="DreamRacer">
+				<a href="https://gamkedo.itch.io/dream-racer">Dream Racer</a>
+			</div>
 
-			<div class="card" coder=true><a href="https://raytex.itch.io/arcaninjadroid">Arcaninjadroid: Kitty Catastrophe</a></div>
+			<div class="card" style="--coder:true;" id="Arcaninjadroid">
+				<a href="https://raytex.itch.io/arcaninjadroid">Arcaninjadroid: Kitty Catastrophe</a>
+			</div>
 
-			<div class="card" coder=true implement=true><a href="https://gamkedo.itch.io/ghosts-of-neo-tokyo">Ghosts in Neo Tokyo</a></div>
+			<div class="card" style="--coder:true; --implement:true;" id="GhostsInNeoTokyo">
+				<a href="https://gamkedo.itch.io/ghosts-of-neo-tokyo">Ghosts in Neo Tokyo</a>
+			</div>
 
-			<div class="card" coder=true><a href="https://gamkedo.itch.io/g-type">G-Type</a></div>
+			<div class="card" style="--coder:true;" id="GType">
+				<a href="https://gamkedo.itch.io/g-type">G-Type</a>
+			</div>
 
 		</div>
 	</body>
+	<script type="text/javascript">
+		function swapToHoverGif() {
+			this.src = this.getAttribute("--hover");
+		}
+	</script>
 </html>
