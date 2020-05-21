@@ -29,6 +29,7 @@
 			.title {
 				text-align: center;
 				font-size: 80px;
+				text-shadow: 3px 3px 3px var(--bbColor);
 			}
 			.subtitle {
 				text-align: center;
@@ -64,11 +65,13 @@
 				border-radius: 10px;
 				text-align: left;
 				background-color: var(--hoColor);
+				box-shadow: 3px 3px 3px var(--bbColor);
 			}
 			.thumbcase {
 				width: 295px;
 				position: relative;
 				display: inline-block;
+				border-radius: 10px;
 			}
 			.thumbcase .thumbhover {
 				top: 0;
@@ -79,11 +82,13 @@
 			}
 			.card:hover .thumbhover {
 				display: inline;
+				box-shadow: 0px 0px 0px var(--bbColor);
 			}
 			img {
 				width: 295px;
 				height: 220px;
 				border-radius: 10px;
+				box-shadow: 3px 3px 3px var(--bbColor);
 			}
 			button {
 				background-color: var(--hiColor);
@@ -94,15 +99,20 @@
 				cursor: pointer;
 				border-style: solid;
 				border-width: 1px;
+				box-shadow: 3px 3px 3px var(--bbColor);
 			}
 			button:hover {
-				transform: translateY(-2px);
-			}
-			button:active {
-				transform: translateY(2px);
+				transform: translateY(-1px);
+				box-shadow: 3px 4px 3px var(--bbColor);
 			}
 			.button.checked {
 				background-color: var(--hoColor);
+				transform: translateY(0px);
+				box-shadow: 3px 3px 3px var(--bbColor);
+			}
+			button:active {
+				transform: translateY(2px);
+				box-shadow: 3px 1px 3px var(--bbColor);
 			}
 		</style>
 	</head>
