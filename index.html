@@ -5,17 +5,17 @@
 		<title>Michael Fewkes: Music & Sound</title>
 		<style>
 			body {
-				--hiColor: #fff9f1;
-				--hoColor: #d4d4ef;
-				--btColor: #f4f4ff;
-				--bbColor: #c4c4df;
-				--sbColor: var(--bbColor);
+				--hiColor: #f0f0ff00;
+				--hoColor: #feffef;
+				--btColor: #f0f0ff;
+				--bbColor: #d0d0ff;
 				font-family: sans-serif;
-				background: linear-gradient(to bottom, var(--btColor) 0%, var(--bbColor) 100%);
+				background: linear-gradient(45deg, var(--btColor) 0%, var(--bbColor) 100%);
 				background-attachment: fixed;
 				text-align: center;
 			}
 			a {
+				text-align: center;
 				text-decoration: none;
 				font-weight: bold;
 				color: black;
@@ -26,7 +26,6 @@
 			.title {
 				text-align: center;
 				font-size: 80px;
-				text-shadow: 3px 3px 2px var(--sbColor);
 			}
 			.subtitle {
 				text-align: center;
@@ -50,17 +49,18 @@
 				padding: 10px;
 				margin: 5px;
 				border-radius: 10px;
-				background-color: var(--hiColor);
-				box-shadow: 3px 3px 2px var(--sbColor);
+				background-color: #ffffff00;
+				text-align: center;
+				border-style: solid;
+				border-width: 0px;
+			}
+			.textcase{
+				width: 280px;
+				padding: 10px;
+				margin-top: 5px;
+				border-radius: 10px;
 				text-align: left;
-			}
-			.card:hover {
-				transform: translateY(-2px);
-				box-shadow: 3px 5px 2px var(--sbColor);
-			}
-			.card:active {
-				transform: translateY(2px);
-				box-shadow: 3px 1px 2px var(--sbColor);
+				background-color: var(--hoColor);
 			}
 			.thumbcase {
 				width: 295px;
@@ -83,24 +83,23 @@
 				border-radius: 10px;
 			}
 			button {
-				background-color: var(--hoColor);
+				background-color: var(--hiColor);
 				border: none;
 				color: black;
 				padding: 10px 30px;
 				text-align: center;
-				box-shadow: 3px 3px 2px var(--sbColor);
 				cursor: pointer;
+				border-style: solid;
+				border-width: 1px;
 			}
 			button:hover {
 				transform: translateY(-2px);
-				box-shadow: 3px 5px 2px var(--sbColor);
 			}
 			button:active {
 				transform: translateY(2px);
-				box-shadow: 3px 1px 2px var(--sbColor);
 			}
 			.button.checked {
-				background-color: var(--hiColor);
+				background-color: var(--hoColor);
 			}
 		</style>
 	</head>
@@ -138,7 +137,7 @@
 				<div class="thumbcase">
 					<img src="IMG/MuxgicHold.png">
 					<img src="IMG/MuxgicHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Muxgic</a>
 				<br>
 				<br>Released Sep 03, 2017
@@ -146,7 +145,7 @@
 				<br>
 				<br>• Designed the instrument in UE4.
 				<br>• Sound design, including instrument sounds
-				<br>• Planned and composed the interactive music
+				<br>• Planned and composed the interactive music</div>
 			</div>
 
 			<div class="card games implement sound" id="Overclocked">
@@ -154,10 +153,10 @@
 				<div class="thumbcase">
 					<img src="IMG/TempThumbnail.png">
 					<img src="IMG/TempThumbnail2.png" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Overclocked: The Aclockalypse</a>
 				<br>
-				<br>
+				<br></div>
 			</div>
 
 			<div class="card games implement music" id="TowersOfSpace">
@@ -165,14 +164,14 @@
 				<div class="thumbcase">
 					<img src="IMG/ToSHold.png">
 					<img src="IMG/ToSHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Towers of Space</a>
 				<br>
 				<br>Released Jul 9, 2017
 				<br>18 week project, 13 week project
 				<br><br>
 				• Maintained the Wwise project used as the audio middleware
-				<br>• Wrote one of the 2 metal music tracks used in the game
+				<br>• Wrote one of the 2 metal music tracks used in the game</div>
 			</div>
 
 			<div class="card games implement sound more" id="SeaOfficiallyLost">
@@ -180,7 +179,7 @@
 				<div class="thumbcase">
 					<img src="IMG/SOLHold.png">
 					<img src="IMG/SOLHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Sea: Officially Lost</a>
 				<br>
 				<br>Released Dec 17, 2017
@@ -189,7 +188,7 @@
 				<br>• Managed the Wwise project
 				<br>• Audio middleware integration
 				<br>• Involved in much of the UI integration
-				<br>• All sound design
+				<br>• All sound design</div>
 			</div>
 
 			<div class="card games implement sound" id="Melody">
@@ -197,10 +196,10 @@
 				<div class="thumbcase">
 					<img src="IMG/TempThumbnail.png">
 					<img src="IMG/TempThumbnail2.png" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Melody</a>
 				<br>
-				<br>
+				<br></div>
 			</div>
 
 			<div class="card games implement music" id="OperationLifeline">
@@ -208,14 +207,14 @@
 				<div class="thumbcase">
 					<img src="IMG/OperationLifelineHold.png">
 					<img src="IMG/OperationLifelineHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Operation Lifeline</a>
 				<br>
 				<br>Released Feb 9, 2020
 				<br>9 week project, 11 collaborators.
 				<br>
 				<br>• Responsible for the FMOD project and integration
-				<br>• Wrote  the actiony synthwave track used for level 2
+				<br>• Wrote  the actiony synthwave track used for level 2</div>
 			</div>
 
 			<div class="card games implement music sound" id="HiddenPassageways">
@@ -223,24 +222,24 @@
 				<div class="thumbcase">
 					<img src="IMG/HiddenPassagewaysHold.png">
 					<img src="IMG/HiddenPassagewaysHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Hidden Passageways</a>
 				<br>
 				<br>Released Oct 14, 2018
 				<br>21 week project, 31 collaborators.
 				<br>
 				<br>• Co-managed the FMOD project used for the audio middleware
-				<br>• Sound and music for the Word Wall section of the game
+				<br>• Sound and music for the Word Wall section of the game</div>
 			</div>
 
 			<div class="card games coder music sound" id="Psyche">
 				<div class="thumbcase">
 					<img src="IMG/TempThumbnail.png">
 					<img src="IMG/TempThumbnail2.png" class="thumbhover">
-				</div>
-				<p style="font-weight: bold;">Psyche</p>
+				</div><div class="textcase">
+				<div style="font-weight: bold;">Psyche</div>
 				<br>
-				<br>
+				<br></div>
 			</div>
 
 			<div class="card games coder" id="RadiantLaserCross">
@@ -248,13 +247,13 @@
 				<div class="thumbcase">
 					<img src="IMG/RLCHold.png">
 					<img src="IMG/RLCHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Radiant Laser Cross</a>
 				<br>
 				<br>Released Dec 16, 2018
 				<br>11 week project, 11 collaborators.
 				<br>
-				<br>• Programmed the dynamic music engine.  Adds and subtracts music layers depending on in game parameters.
+				<br>• Programmed the dynamic music engine.  Adds and subtracts music layers depending on in game parameters.</div>
 			</div>
 
 			<div class="card games coder implement more" id="ArtilleryFodder">
@@ -262,7 +261,7 @@
 				<div class="thumbcase">
 					<img src="IMG/ArtilleryFodderHold.png">
 					<img src="IMG/ArtilleryFodderHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Artillery Fodder</a>
 				<br>
 				<br>Released Mar 8, 2020
@@ -274,7 +273,7 @@
 				<br>• AI
 				<br>• Audio integration
 				<br>• Terrain generation
-				<br>• Most UI and weapons code
+				<br>• Most UI and weapons code</div>
 			</div>
 
 			<div class="card games coder implement" id="Flipside">
@@ -282,14 +281,14 @@
 				<div class="thumbcase">
 					<img src="IMG/FlipsideHold.png">
 					<img src="IMG/FlipsideHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Flipside</a>
 				<br>
 				<br>Released Apr 5, 2020
 				<br>13 weeks project, 15 collaborators
 				<br>
 				<br>• Programmed the audio engine using the WebAudioAPI.  Features including 2D positional audio and synced music track crossfading
-				<br>• All of the sound integration
+				<br>• All of the sound integration</div>
 			</div>
 
 			<div class="card games coder implement music sound more" id="WeMustPrepare">
@@ -297,7 +296,7 @@
 				<div class="thumbcase">
 					<img src="IMG/WMPHold.png">
 					<img src="IMG/WMPHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				We Must Prepare</a>
 				<br>
 				<br>Released Aug 5, 2018
@@ -308,7 +307,7 @@
 				<br>• Most of the sound integration
 				<br>• Some UI design and relevant integration for the option menus
 				<br>• Ambience and UI sound design
-				<br>• Wrote a "Harvest Moon/Stardew Valley" style music track
+				<br>• Wrote a "Harvest Moon/Stardew Valley" style music track</div>
 			</div>
 
 			<div class="card games coder implement sound" id="DreamRacer">
@@ -316,14 +315,14 @@
 				<div class="thumbcase">
 					<img src="IMG/DreamRacerHold.png">
 					<img src="IMG/DreamRacerHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Dream Racer</a>
 				<br>
 				<br>Released Jul 29, 2018
 				<br>11 weeks, 23 collaborators
 				<br>
 				<br>• Wrote the HTML5 audio engine.  Includes layer blended sound mixing based on in game parameters
-				<br>• Designed and integrated the dynamic car sounds.  Features include RPM accurate engine sounds and speed based brake sounds.
+				<br>• Designed and integrated the dynamic car sounds.  Features include RPM accurate engine sounds and speed based brake sounds.</div>
 			</div>
 
 			<div class="card games coder" id="Arcaninjadroid">
@@ -331,7 +330,7 @@
 				<div class="thumbcase">
 					<img src="IMG/RKCHold.png">
 					<img src="IMG/RKCHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Arcaninjadroid: Kitty Catastrophe</a>
 				<br>
 				<br>Released Sept 30, 2018
@@ -339,7 +338,7 @@
 				<br>
 				<br>• Wrote and integrated the audio engine.
 				<br>
-				<br>The project lead requested I come integrate the audio engine I had designed and already integrated into Ghosts of Neo Tokyo and Dream Racer.
+				<br>The project lead requested I come integrate the audio engine I had designed and already integrated into Ghosts of Neo Tokyo and Dream Racer.</div>
 			</div>
 
 			<div class="card games coder implement" id="GhostsInNeoTokyo">
@@ -347,7 +346,7 @@
 				<div class="thumbcase">
 					<img src="IMG/GiNTHold.png">
 					<img src="IMG/GiNTHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Ghosts in Neo Tokyo</a>
 				<br>
 				<br>Released Apr 22, 2018
@@ -355,7 +354,7 @@
 				<br>
 				<br>• Audio lead
 				<br>• Wrote the HTML5 audio engine, features included synced music crossfades
-				<br>• All music and sound integration
+				<br>• All music and sound integration</div>
 			</div>
 
 			<div class="card games coder" id="GType">
@@ -363,13 +362,13 @@
 				<div class="thumbcase">
 					<img src="IMG/GTHold.png">
 					<img src="IMG/GTHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				G-Type</a>
 				<br>
 				<br>Released Dec 9, 2018
 				<br>15 week project, 32 collaborators
 				<br>
-				<br>• Uses the saem JS audio engine I wrote for Ghosts in Neo Tokyo, Dream Racer, and We Must Prepare
+				<br>• Uses the saem JS audio engine I wrote for Ghosts in Neo Tokyo, Dream Racer, and We Must Prepare</div>
 			</div>
 
 			<div class="card games music more" id="NethercardKingdom">
@@ -377,14 +376,14 @@
 				<div class="thumbcase">
 					<img src="IMG/NKHold.png">
 					<img src="IMG/NKHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Nethercard Kingdom</a>
 				<br>
 				<br>Released Jan 12, 2020
 				<br>13 week project, 14 collaborators
 				<br>
 				<br>• UI debugging and fixes for sliders and the pause menu
-				<br>• Wrote the action orchestra piece used during the deck management section
+				<br>• Wrote the action orchestra piece used during the deck management section</div>
 			</div>
 
 			<div class="card games music" id="SingedDirt">
@@ -392,13 +391,13 @@
 				<div class="thumbcase">
 					<img src="IMG/SingedDirtHold.png">
 					<img src="IMG/SingedDirtHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Singed Dirt</a>
 				<br>
 				<br>Released May 21, 2017
 				<br>20 week project, 13 collaborators
 				<br>
-				<br>• Composed a sci-fi western track for the gameplay music
+				<br>• Composed a sci-fi western track for the gameplay music</div>
 			</div>
 
 			<div class="card games music" id="TinyRoboRacers">
@@ -406,13 +405,13 @@
 				<div class="thumbcase">
 					<img src="IMG/TRRHold.png">
 					<img src="IMG/TRRHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Tiny Robo Racers</a>
 				<br>
 				<br>Released Feb 11 2018
 				<br>10 week project, 9 collaborators
 				<br>
-				<br>• Composed an upbeat 8-bit/16-bit style racing music track
+				<br>• Composed an upbeat 8-bit/16-bit style racing music track</div>
 			</div>
 
 			<div class="card games music" id="WheelOfMisfortune">
@@ -420,13 +419,13 @@
 				<div class="thumbcase">
 					<img src="IMG/WoMfHold.png">
 					<img src="IMG/WoMfHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Wheel of Misfortune</a>
 				<br>
 				<br>Released Feb 4, 2018
 				<br>9 week project, 9 collaborators
 				<br>
-				<br>• Composed music for the boss fight
+				<br>• Composed music for the boss fight</div>
 			</div>
 
 			<div class="card games sound" id="ScrapMetalElites">
@@ -434,14 +433,14 @@
 				<div class="thumbcase">
 					<img src="IMG/SMEHold.png">
 					<img src="IMG/SMEHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Scrap Metal Elites</a>
 				<br>
 				<br>Released May 27, 2018
 				<br>16 week project, 13 collaborators
 				<br>
 				<br>• Designed all of the metal impact sounds
-				<br>• A member of the stadium crowd
+				<br>• A member of the stadium crowd</div>
 			</div>
 
 			<div class="card games sound" id="SuperBuggyGolf">
@@ -449,7 +448,7 @@
 				<div class="thumbcase">
 					<img src="IMG/SBGHold.png">
 					<img src="IMG/SBGHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Super Buggy Golf</a>
 				<br>
 				<br>Released May 6, 2018
@@ -457,7 +456,7 @@
 				<br>
 				<br>• Sound design for the ball
 				<br>
-				<br>When the game was nearing release I joined with this last hour contribution that was important for player feedback.
+				<br>When the game was nearing release I joined with this last hour contribution that was important for player feedback.</div>
 			</div>
 
 			<div class="card games sound" id="Geogami">
@@ -465,13 +464,13 @@
 				<div class="thumbcase">
 					<img src="IMG/GeoHold.png">
 					<img src="IMG/GeoHover.gif" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Geogami</a>
 				<br>
 				<br>Released Jun 10, 2018
 				<br>13 week project, 12 collaborators
 				<br>
-				<br>• Created over 20 sound assets
+				<br>• Created over 20 sound assets</div>
 			</div>
 
 			<div class="card" id="template">
@@ -479,10 +478,10 @@
 				<div class="thumbcase">
 					<img src="IMG/TempThumbnail.png">
 					<img src="IMG/TempThumbnail2.png" class="thumbhover">
-				</div>
+				</div><div class="textcase">
 				Template</a>
 				<br>
-				<br>
+				<br></div>
 			</div>
 
 		</div>
