@@ -113,18 +113,18 @@
 		<div class="primarySelector" style="visibility: hidden;">Games, Theatre, Animation</div>
 		<div class="gamesSelector">
 
-			<button onclick="ToggleChecked('coder');" class="button games coder checked" style="border-radius: 20px 0px 0px 20px;">
+			<button onclick="ToggleChecked('coder');" class="button games coder" style="border-radius: 20px 0px 0px 20px;">
 			Audio Coder</button>
-			<button onclick="ToggleChecked('implement');" class="button games implement unchecked">
+			<button onclick="ToggleChecked('implement');" class="button games implement">
 			Technical Design/Implementation</button>
 
-			<button onclick="ToggleChecked('music');" class="button games music unchecked">
+			<button onclick="ToggleChecked('music');" class="button games music">
 			Music Composition</button>
 
-			<button onclick="ToggleChecked('sound'); " class="button games sound unchecked">
+			<button onclick="ToggleChecked('sound'); " class="button games sound">
 			Sound Design</button>
 
-			<button onclick="ToggleChecked('more');" class="button games more unchecked" style="border-radius: 0px 20px 20px 0px;">
+			<button onclick="ToggleChecked('more');" class="button games more" style="border-radius: 0px 20px 20px 0px;">
 			Other Contrabutions</button>
 
 		</div>
@@ -232,16 +232,6 @@
 				<br>• Sound and music for the Word Wall section of the game</div>
 			</div>
 
-			<div class="card games coder music sound" id="Psyche">
-				<div class="thumbcase">
-					<img src="IMG/TempThumbnail.png">
-					<img src="IMG/TempThumbnail2.png" class="thumbhover">
-				</div><div class="textcase">
-				<div style="font-weight: bold;">Psyche</div>
-				<br>
-				<br></div>
-			</div>
-
 			<div class="card games coder" id="RadiantLaserCross">
 				<a href="https://klaim.itch.io/radiant-laser-cross">
 				<div class="thumbcase">
@@ -254,6 +244,16 @@
 				<br>11 week project, 11 collaborators.
 				<br>
 				<br>• Programmed the dynamic music engine.  Adds and subtracts music layers depending on in game parameters.</div>
+			</div>
+
+			<div class="card games coder music sound" id="Psyche">
+				<div class="thumbcase">
+					<img src="IMG/TempThumbnail.png">
+					<img src="IMG/TempThumbnail2.png" class="thumbhover">
+				</div><div class="textcase">
+				<div style="font-weight: bold;">Psyche</div>
+				<br>
+				<br></div>
 			</div>
 
 			<div class="card games coder implement more" id="ArtilleryFodder">
@@ -498,9 +498,8 @@
 				"more": ""
 			};
 
-			window.onload = function () {
-				FilterCards();
-			}
+			ToggleChecked(currentTab);
+			FilterCards();
 
 			function FilterCards() {
 				var allCards = document.getElementsByClassName("card");
@@ -523,10 +522,8 @@
 				for (var i = 0; i < allButtons.length; i++) {
 					if (allButtons[i].classList.contains("checked")) {
 						allButtons[i].classList.remove("checked");
-						allButtons[i].classList.add("unchecked");
 					}
 					if (allButtons[i].classList.contains(tab)) {
-						allButtons[i].classList.remove("unchecked");
 						allButtons[i].classList.add("checked");
 					}
 					
