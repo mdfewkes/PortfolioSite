@@ -4,8 +4,14 @@
 		<meta charset="utf-8"/>
 		<style>
 			body {
+				--hiColor: #fff9f1;
+				--hoColor: #dfd9d1;
+				--btColor: #ffffff;
+				--bbColor: #d9d9d9;
+				--sbColor: var(--bbColor);
 				font-family: sans-serif;
-				background-color: #f4f4ff;
+				background: linear-gradient(to bottom, var(--btColor) 0%, var(--bbColor) 100%);
+				background-attachment: fixed;
 			}
 			a {
 				text-decoration: none;
@@ -18,6 +24,7 @@
 			.title {
 				text-align: center;
 				font-size: 80px;
+				text-shadow: 3px 3px 2px var(--sbColor);
 			}
 			.subtitle {
 				text-align: center;
@@ -41,8 +48,8 @@
 				padding: 10px;
 				margin: 5px;
 				border-radius: 10px;
-				background-color: #ffe4d4;
-				box-shadow: 3px 3px 2px grey;
+				background-color: var(--hiColor);
+				box-shadow: 3px 3px 2px var(--sbColor);
 			}
 			.thumbcase {
 				width: 295px;
@@ -65,20 +72,20 @@
 				border-radius: 10px;
 			}
 			button {
-				background-color: #e4e4ff;
+				background-color: var(--hoColor);
 				border: none;
 				color: black;
 				padding: 15px 32px;
 				text-align: center;
-				box-shadow: 3px 3px 2px grey;
+				box-shadow: 3px 3px 2px var(--sbColor);
 				border-radius: 10px;
 			}
 			button:active {
 				transform: translateY(2px);
-				box-shadow: 3px 1px 2px grey;
+				box-shadow: 3px 1px 2px var(--sbColor);
 			}
 			.button.checked {
-				background-color: #ffe4d4;
+				background-color: var(--hiColor);
 			}
 		</style>
 	</head>
@@ -105,7 +112,7 @@
 			Sound Design</button>
 
 			<button onclick="ToggleChecked('more');" class="button games more unchecked">
-			Other Skills</button>
+			Other Contrabutions</button>
 
 		</div>
 
@@ -128,7 +135,7 @@
 				<br>• Planned and composed the interactive music
 			</div>
 
-			<div class="card games coder sound" id="Overclocked">
+			<div class="card games implement sound" id="Overclocked">
 				<a href="https://store.steampowered.com/app/827220/Overclocked_The_Aclockalypse/">
 				<div class="thumbcase">
 					<img src="IMG/TempThumbnail.png">
@@ -139,7 +146,7 @@
 				<br>
 			</div>
 
-			<div class="card games coder music" id="TowersOfSpace">
+			<div class="card games implement music" id="TowersOfSpace">
 				<a href="https://spadxiii.itch.io/towers-of-space">
 				<div class="thumbcase">
 					<img src="IMG/ToSHold.png">
@@ -154,7 +161,7 @@
 				<br>• Wrote one of the 2 metal music tracks used in the game
 			</div>
 
-			<div class="card games coder implement sound more" id="SeaOfficiallyLost">
+			<div class="card games implement sound more" id="SeaOfficiallyLost">
 				<a href="https://lanthos.itch.io/sea-officially-lost">
 				<div class="thumbcase">
 					<img src="IMG/SOLHold.png">
@@ -212,7 +219,7 @@
 				<br>• Sound and music for the Word Wall section of the game
 			</div>
 
-			<div class="card games coder implement music sound" id="Psyche">
+			<div class="card games coder music sound" id="Psyche">
 				<div class="thumbcase">
 					<img src="IMG/TempThumbnail.png">
 					<img src="IMG/TempThumbnail2.png" class="thumbhover">
