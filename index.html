@@ -91,20 +91,20 @@
 		<div class="primarySelector" style="visibility: hidden;">Games, Theatre, Animation</div>
 		<div class="gamesSelector">
 
-			<button onclick="coderGamesChecked = !coderGamesChecked; toggleChecked(this); FilterCards();" class="button games coder checked">
+			<button onclick="ToggleChecked('coder');" class="button games coder checked">
 			Audio Coder</button>
 
-			<button onclick="implementGamesChecked = !implementGamesChecked; toggleChecked(this); FilterCards();" class="button games implement checked">
-			Technical</button>
+			<button onclick="ToggleChecked('implement');" class="button games implement unchecked">
+			Technical Design/Implementation</button>
 
-			<button onclick="musicGamesChecked = !musicGamesChecked; toggleChecked(this); FilterCards();" class="button games music unchecked">
-			Music</button>
+			<button onclick="ToggleChecked('music');" class="button games music unchecked">
+			Music Composition</button>
 
-			<button onclick="soundGamesChecked = !soundGamesChecked; toggleChecked(this); FilterCards();" class="button games sound unchecked">
+			<button onclick="ToggleChecked('sound'); " class="button games sound unchecked">
 			Sound Design</button>
 
-			<button onclick="moreGamesChecked = !moreGamesChecked; toggleChecked(this); FilterCards();" class="button games more unchecked">
-			And More</button>
+			<button onclick="ToggleChecked('more');" class="button games more unchecked">
+			Other Skills</button>
 
 		</div>
 
@@ -466,12 +466,7 @@
 		</div>
 		<script>
 			var currentPage = "games";
-
-			var coderGamesChecked = true;
-			var implementGamesChecked = true;
-			var musicGamesChecked = false;
-			var soundGamesChecked = false;
-			var moreGamesChecked = false;
+			var currentTab = "coder";
 
 			window.onload = function () {
 				FilterCards();
@@ -484,25 +479,27 @@
 					if (allCards[i].classList.contains(currentPage)) {
 						allCards[i].style.display = "block";
 					}
-					if ( !((allCards[i].classList.contains("coder") && coderGamesChecked)
-						|| (allCards[i].classList.contains("implement") && implementGamesChecked)
-						|| (allCards[i].classList.contains("music") && musicGamesChecked)
-						|| (allCards[i].classList.contains("sound") && soundGamesChecked)
-						|| (allCards[i].classList.contains("more") && moreGamesChecked)
-						)) {
+					if (!allCards[i].classList.contains(currentTab)) {
 						allCards[i].style.display = "none";
 					}
 				}
 			}
 
-			function toggleChecked(item) {
-				if (item.classList.contains("checked")) {
-					item.classList.remove("checked");
-					item.classList.add("unchecked");
-				} else {
-					item.classList.remove("unchecked");
-					item.classList.add("checked");
+			function ToggleChecked(tab) {
+				currentTab = tab;
+				var allButtons = document.getElementsByClassName("button");
+				for (var i = 0; i < allButtons.length; i++) {
+					if (allButtons[i].classList.contains("checked")) {
+						allButtons[i].classList.remove("checked");
+						allButtons[i].classList.add("unchecked");
+					}
+					if (allButtons[i].classList.contains(tab)) {
+						allButtons[i].classList.remove("unchecked");
+						allButtons[i].classList.add("checked");
+					}
+					
 				}
+				FilterCards();
 			}
 		</script>
 	</body>
