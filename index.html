@@ -62,6 +62,15 @@
 				width: 295px;
 				height: 220px;
 			}
+			button {
+				background-color: lightGrey;
+			}
+			button:active {
+				transform: translateY(2px);
+			}
+			.button.checked {
+				background-color: darkGrey;
+			}
 		</style>
 	</head>
 	<body>
@@ -72,7 +81,25 @@
 							for Games, Film, Animation, and Theatre</div>
 		<br>
 		<div class="primarySelector" style="visibility: hidden;">Games, Theatre, Animation</div>
-		<div class="gamesSelector">Audio Coder, Technical, Music, Sound Design, And More</div>
+		<div class="gamesSelector">
+
+			<button onclick="coderGamesChecked = !coderGamesChecked; toggleChecked(this); FilterCards();" class="button games coder checked">
+			Audio Coder</button>
+
+			<button onclick="implementGamesChecked = !implementGamesChecked; toggleChecked(this); FilterCards();" class="button games implement checked">
+			Technical</button>
+
+			<button onclick="musicGamesChecked = !musicGamesChecked; toggleChecked(this); FilterCards();" class="button games music unchecked">
+			Music</button>
+
+			<button onclick="soundGamesChecked = !soundGamesChecked; toggleChecked(this); FilterCards();" class="button games sound unchecked">
+			Sound Design</button>
+
+			<button onclick="moreGamesChecked = !moreGamesChecked; toggleChecked(this); FilterCards();" class="button games more unchecked">
+			And More</button>
+
+		</div>
+
 		<div class="introText"></div>
 		<div class="cardTable">
 
@@ -218,6 +245,7 @@
 		</div>
 		<script>
 			var currentPage = "games";
+
 			var coderGamesChecked = true;
 			var implementGamesChecked = true;
 			var musicGamesChecked = false;
@@ -225,24 +253,34 @@
 			var moreGamesChecked = false;
 
 			window.onload = function () {
-				filterCards();
+				FilterCards();
 			}
 
-			function filterCards() {
+			function FilterCards() {
 				var allCards = document.getElementsByClassName("card");
 				for (var i = 0; i < allCards.length; i++) {
 					allCards[i].style.display = "none";
-					if (allCards[i].getAttribute("class").includes(currentPage)) {
+					if (allCards[i].classList.contains(currentPage)) {
 						allCards[i].style.display = "block";
 					}
-					if ( !((allCards[i].getAttribute("class").includes("coder") && coderGamesChecked)
-						|| (allCards[i].getAttribute("class").includes("implement") && implementGamesChecked)
-						|| (allCards[i].getAttribute("class").includes("music") && musicGamesChecked)
-						|| (allCards[i].getAttribute("class").includes("sound") && soundGamesChecked)
-						|| (allCards[i].getAttribute("class").includes("more") && moreGamesChecked)
+					if ( !((allCards[i].classList.contains("coder") && coderGamesChecked)
+						|| (allCards[i].classList.contains("implement") && implementGamesChecked)
+						|| (allCards[i].classList.contains("music") && musicGamesChecked)
+						|| (allCards[i].classList.contains("sound") && soundGamesChecked)
+						|| (allCards[i].classList.contains("more") && moreGamesChecked)
 						)) {
 						allCards[i].style.display = "none";
 					}
+				}
+			}
+
+			function toggleChecked(item) {
+				if (item.classList.contains("checked")) {
+					item.classList.remove("checked");
+					item.classList.add("unchecked");
+				} else {
+					item.classList.remove("unchecked");
+					item.classList.add("checked");
 				}
 			}
 		</script>
