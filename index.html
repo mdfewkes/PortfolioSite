@@ -5,13 +5,14 @@
 		<style>
 			body {
 				--hiColor: #fff9f1;
-				--hoColor: #e4e4ff;
+				--hoColor: #d4d4ef;
 				--btColor: #f4f4ff;
-				--bbColor: #e4e4ff;
+				--bbColor: #c4c4df;
 				--sbColor: var(--bbColor);
 				font-family: sans-serif;
 				background: linear-gradient(to bottom, var(--btColor) 0%, var(--bbColor) 100%);
 				background-attachment: fixed;
+				text-align: center;
 			}
 			a {
 				text-decoration: none;
@@ -50,6 +51,7 @@
 				border-radius: 10px;
 				background-color: var(--hiColor);
 				box-shadow: 3px 3px 2px var(--sbColor);
+				text-align: left;
 			}
 			.thumbcase {
 				width: 295px;
@@ -75,10 +77,9 @@
 				background-color: var(--hoColor);
 				border: none;
 				color: black;
-				padding: 15px 32px;
+				padding: 10px 30px;
 				text-align: center;
 				box-shadow: 3px 3px 2px var(--sbColor);
-				border-radius: 10px;
 			}
 			button:active {
 				transform: translateY(2px);
@@ -99,9 +100,8 @@
 		<div class="primarySelector" style="visibility: hidden;">Games, Theatre, Animation</div>
 		<div class="gamesSelector">
 
-			<button onclick="ToggleChecked('coder');" class="button games coder checked">
+			<button onclick="ToggleChecked('coder');" class="button games coder checked" style="border-radius: 20px 0px 0px 20px;">
 			Audio Coder</button>
-
 			<button onclick="ToggleChecked('implement');" class="button games implement unchecked">
 			Technical Design/Implementation</button>
 
@@ -111,7 +111,7 @@
 			<button onclick="ToggleChecked('sound'); " class="button games sound unchecked">
 			Sound Design</button>
 
-			<button onclick="ToggleChecked('more');" class="button games more unchecked">
+			<button onclick="ToggleChecked('more');" class="button games more unchecked" style="border-radius: 0px 20px 20px 0px;">
 			Other Contrabutions</button>
 
 		</div>
@@ -477,6 +477,14 @@
 			var currentPage = "games";
 			var currentTab = "coder";
 
+			var intros = {
+				"coder": "",
+				"implement": "",
+				"music": "",
+				"sound": "",
+				"more": ""
+			};
+
 			window.onload = function () {
 				FilterCards();
 			}
@@ -492,6 +500,8 @@
 						allCards[i].style.display = "none";
 					}
 				}
+
+				document.getElementsByClassName("introText")[0].innerHTML = intros[currentTab];
 			}
 
 			function ToggleChecked(tab) {
