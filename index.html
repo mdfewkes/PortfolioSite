@@ -7,13 +7,14 @@
 		<style>
 			body {
 				--hiColor: #ffffff00;
-				--hoColor: #ffffff;
+				--hoColor: #ffffffff;
 				--btColor: #fafaff;
 				--bbColor: #dadaff;
 				font-family: sans-serif;
 				background: linear-gradient(157.2deg, var(--btColor) 15%, var(--bbColor) 100%);
 				background-attachment: fixed;
 				text-align: center;
+				min-height: 100vh;
 			}
 			a {
 				text-align: center;
@@ -25,7 +26,7 @@
 				min-height: 50px;
 			}
 			.footer {
-				min-height: 100px;
+				margin: 50px;
 			}
 			.title {
 				text-align: center;
@@ -36,6 +37,55 @@
 			.subtitle {
 				text-align: center;
 				font-size: 20px;
+			}
+			.cardTable {
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: center;
+				margin: 50px;
+			}
+			.card {
+				width: 300px;
+				padding: 10px;
+				margin: 5px;
+				border-radius: 10px;
+				background-color: #ffffff00;
+				text-align: center;
+				border-style: solid;
+				border-width: 0px;
+			}
+			.textcase{
+				width: 280px;
+				padding: 10px;
+				margin-top: 5px;
+				border-radius: 10px;
+				text-align: left;
+				background-color: var(--hoColor);
+				box-shadow: 3px 3px 3px var(--bbColor);
+			}
+			.thumbcase {
+				width: 295px;
+				position: relative;
+				display: inline-block;
+				border-radius: 10px;
+			}
+			.thumbcase .thumbhover {
+				top: 0;
+				left: 0;
+				display: none;
+				position: absolute;
+				z-index: 99;
+			}
+			.card:hover .thumbhover {
+				display: inline;
+				box-shadow: 0px 0px 0px var(--bbColor);
+			}
+			img {
+				width: 295px;
+				height: 220px;
+				border-radius: 10px;
+				box-shadow: 3px 3px 3px var(--bbColor);
 			}
 			button {
 				background-color: var(--hiColor);
@@ -52,6 +102,11 @@
 				transform: translateY(-1px);
 				box-shadow: 3px 4px 3px var(--bbColor);
 			}
+			button.checked {
+				background-color: var(--hoColor);
+				transform: translateY(0px);
+				box-shadow: 3px 3px 3px var(--bbColor);
+			}
 			button:active {
 				transform: translateY(2px);
 				box-shadow: 3px 1px 3px var(--bbColor);
@@ -59,23 +114,591 @@
 		</style>
 	</head>
 	<body>
-
 		<div class="headroom"></div>
 		<div class="title">Michael Fewkes</div>
 		<div class="subtitle">Technical Sound Designer, Audio Implementer/Coder</div>
-		<div class="nav"><br>
-			<button style="border-radius: 20px 0px 0px 20px;">Home</button>
-			<button class="button games coder">About</button>
-			<button style="border-radius: 0px 20px 20px 0px;">Credits</button>
+		
+		<br>
 
-			<br></div>
+		<div style="display: none;">
+			<button onclick="ToggleChapters('home');" class="buttonChapter home" style="border-radius: 20px 0px 0px 20px;">
+			Home</button>
+			<button onclick="ToggleChapters('about');" class="buttonChapter about">
+			About</button>
+			<button onclick="ToggleChapters('contact');" class="buttonChapter contact">
+			Contact</button>
+			<button onclick="ToggleChapters('credits');" class="buttonChapter credits" style="border-radius: 0px 20px 20px 0px;">
+			Credits</button>
+		</div>
 
+		<br>
 
+		<div class="chapter home">
+			Home
+		</div>
 
+		<div class="chapter about">
+			About
+		</div>
 
+		<div class="chapter contact">
+			Contact
+		</div>
 
+		<div class="chapter credits">
+			<div class="subtitle">Sound, Music, Recording, and Programming</div>
+
+			<br>
+
+			<div style="display: none;">
+				<button onclick="TogglePage('games');" class="buttonPage games" style="border-radius: 20px 0px 0px 20px;">
+				Games</button>
+				<button onclick="TogglePage('film');" class="buttonPage film">
+				Film</button>
+				<button onclick="TogglePage('animation');" class="buttonPage animation">
+				Animation</button>
+				<button onclick="TogglePage('theatre');" class="buttonPage theatre" style="border-radius: 0px 20px 20px 0px;">
+				Theatre</button>
+			</div>
+
+			<br>
+
+			<div class="selector games">
+				<button onclick="ToggleTab('games');" class="buttonTab games" style="border-radius: 20px 0px 0px 20px;">
+				All</button>
+				<button onclick="ToggleTab('coder');" class="buttonTab games coder">
+				Audio Coder</button>
+				<button onclick="ToggleTab('implement');" class="buttonTab games implement">
+				Technical Design/Implementation</button>
+				<button onclick="ToggleTab('music');" class="buttonTab games music">
+				Music Composition</button>
+				<button onclick="ToggleTab('sound'); " class="buttonTab games sound">
+				Sound Design</button>
+				<button onclick="ToggleTab('more');" class="buttonTab games more" style="border-radius: 0px 20px 20px 0px;">
+				Other Contrabutions</button>
+			</div>
+
+			<div class="cardTable">
+
+				<div class="card games coder implement sound" id="PaperToPail">
+					<a href="https://mdfewkes.itch.io/paper-to-pail">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Paper to Pail</a>
+					<br>
+					<br>Released July 19, 2020
+					<br>12 week project, 10 collaborators
+					<br>
+					<br>• Project lead and main engineer 
+					<br>• Art direction
+					<br>• Gameplay
+					<br>• AI 
+					<br>• Music Integration
+					<br>• Sound design</div>
+				</div>
+
+				<div class="card games coder implement" id="MysticChambers">
+					<a href="https://bacstudios.itch.io/mystic-chambers">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Mystic Chambers</a>
+					<br>
+					<br>Released Jun 28, 2020
+					<br>16 week project, 11 collaborators
+					<br>
+					<br>• Programmed the 3d audio engine.  Features include 3D panning, dynamic reverb, sound propagation, occlusion, and dynamic reverb</div>
+				</div>
+
+				<div class="card games music sound" id="Muxgic">
+					<a href="https://runeberg.itch.io/muxgic">
+					<div class="thumbcase">
+						<img src="IMG/MuxgicHold.png">
+						<img src="IMG/MuxgicHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Muxgic</a>
+					<br>
+					<br>Released Sep 03, 2017
+					<br>2 week jam. 2 person team
+					<br>
+					<br>• Designed the instrument in UE4
+					<br>• Sound design, including instrument sounds
+					<br>• Planned and composed the interactive music</div>
+				</div>
+
+				<div class="card games implement sound" id="Overclocked">
+					<a href="https://store.steampowered.com/app/827220/Overclocked_The_Aclockalypse/">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Overclocked: The Aclockalypse</a>
+					<br>
+					<br>Released Apr 27 - 2018
+					<br>4 month capstone project, 18 team members
+					<br>
+					<br>• Managed Wwise project
+					<br>• Integrated Wwise into Unity
+					<br>• Sound design
+					<br>• Planned and engineered the music recording session</div>
+				</div>
+
+				<div class="card games implement music" id="TowersOfSpace">
+					<a href="https://spadxiii.itch.io/towers-of-space">
+					<div class="thumbcase">
+						<img src="IMG/ToSHold.png">
+						<img src="IMG/ToSHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Towers of Space</a>
+					<br>
+					<br>Released Jul 9, 2017
+					<br>18 week project, 13 week project
+					<br>
+					<br>• Maintained the Wwise project used as the audio middleware
+					<br>• Wrote one of the 2 metal music tracks used in the game</div>
+				</div>
+
+				<div class="card games implement sound more" id="SeaOfficiallyLost">
+					<a href="https://lanthos.itch.io/sea-officially-lost">
+					<div class="thumbcase">
+						<img src="IMG/SOLHold.png">
+						<img src="IMG/SOLHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Sea: Officially Lost</a>
+					<br>
+					<br>Released Dec 17, 2017
+					<br>20 week project, 18 collaborators
+					<br>
+					<br>• Managed the Wwise project
+					<br>• Audio middleware integration
+					<br>• Involved in much of the UI integration
+					<br>• All sound design</div>
+				</div>
+
+				<div class="card games implement sound" id="Melody">
+					<a href="https://store.steampowered.com/app/471200/Melody/">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Melody</a>
+					<br>
+					<br>Released Oct 5, 2017
+					<br>2 day jam plus dev-time, 4 collaborators
+					<br>
+					<br>• Designed instrument interaction
+					<br>• Managed FMOD project
+					<br>• Recorded marimba samples</div>
+				</div>
+
+				<div class="card games implement music" id="OperationLifeline">
+					<a href="https://brnielsen.itch.io/operationlifeline">
+					<div class="thumbcase">
+						<img src="IMG/OperationLifelineHold.png">
+						<img src="IMG/OperationLifelineHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Operation Lifeline</a>
+					<br>
+					<br>Released Feb 9, 2020
+					<br>9 week project, 11 collaborators
+					<br>
+					<br>• Responsible for the FMOD project and integration
+					<br>• Wrote  the actiony synthwave track used for level 2</div>
+				</div>
+
+				<div class="card games music" id="XenoJackers">
+					<a href="https://gamkedo.itch.io/xeno-jackers">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Xeno Jackers</a>
+					<br>
+					<br>11 week project, 11 collaborators
+					<br>9 week project, 11 collaborators
+					<br>
+					<br>• Wrote several classic retro music tracks.  The title music, level 2, and level 3</div>
+				</div>
+
+				<div class="card games implement music sound" id="HiddenPassageways">
+					<a href="https://gamkedo.itch.io/hidden-passageways">
+					<div class="thumbcase">
+						<img src="IMG/HiddenPassagewaysHold.png">
+						<img src="IMG/HiddenPassagewaysHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Hidden Passageways</a>
+					<br>
+					<br>Released Oct 14, 2018
+					<br>21 week project, 31 collaborators
+					<br>
+					<br>• Co-managed the FMOD project used for the audio middleware
+					<br>• Sound and music for the Word Wall section of the game</div>
+				</div>
+
+				<div class="card games coder" id="HiddenPassages2">
+					<a href="https://gamkedo.itch.io/hidden-passages-2">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Hidden Passages 2</a>
+					<br>
+					<br>Released July 12, 2020
+					<br>5 months, 12 contributors
+					<br>
+					<br>• Developed 4 "experimental" "instrument toy machines" using WebAudioAPI.  Drums, Trumpet, Trombone, and Flute
+					<br>
+					<br>In keeping with the game's theme, these instruments were intended to be cryptic, but ultimately functional.  If you can figure out how they work, you should be able to play any tune on them you could with the real instrument.</div>
+				</div>
+
+				<div class="card games coder implement music sound" id="Bundle30">
+					<a href="https://stebssbets.itch.io/bundle-of-30-language-games">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Bundle of 30 Language Games</a>
+					<br>
+					<br>Released Mar 11, 2020
+					<br>5 month project, 12 collaborators
+					<br>
+					<br>• Programmed the audio engine.  Features including music transitions, multiple audio buses, automated music ducking, and dynamic asset loading
+					<br>• UI and player feedback sounds
+					<br>• 6 background music tracks and 2 transition music tracks</div>
+				</div>
+
+				<div class="card games coder" id="RadiantLaserCross">
+					<a href="https://klaim.itch.io/radiant-laser-cross">
+					<div class="thumbcase">
+						<img src="IMG/RLCHold.png">
+						<img src="IMG/RLCHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Radiant Laser Cross</a>
+					<br>
+					<br>Released Dec 16, 2018
+					<br>11 week project, 11 collaborators
+					<br>
+					<br>• Programmed the dynamic music engine.  Adds and subtracts music layers depending on in game parameters</div>
+				</div>
+
+				<div class="card games coder implement more" id="ArtilleryFodder">
+					<a href="https://mdfewkes.itch.io/artillery-fodder">
+					<div class="thumbcase">
+						<img src="IMG/ArtilleryFodderHold.png">
+						<img src="IMG/ArtilleryFodderHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Artillery Fodder</a>
+					<br>
+					<br>Released Mar 8, 2020
+					<br>6 week project, 14 collaboratprs
+					<br>
+					<br>• Project lead and main engineer
+					<br>• Gameplay code
+					<br>• Physics
+					<br>• AI
+					<br>• Audio integration
+					<br>• Terrain generation
+					<br>• Most UI and weapons code</div>
+				</div>
+
+				<div class="card games coder implement" id="Flipside">
+					<a href="https://gamkedo.itch.io/flipside">
+					<div class="thumbcase">
+						<img src="IMG/FlipsideHold.png">
+						<img src="IMG/FlipsideHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Flipside</a>
+					<br>
+					<br>Released Apr 5, 2020
+					<br>13 weeks project, 15 collaborators
+					<br>
+					<br>• Programmed the audio engine using the WebAudioAPI.  Features including 2D positional audio and synced music track crossfading
+					<br>• All of the sound integration</div>
+				</div>
+
+				<div class="card games coder implement music sound more" id="WeMustPrepare">
+					<a href="https://lanthos.itch.io/we-must-prepare">
+					<div class="thumbcase">
+						<img src="IMG/WMPHold.png">
+						<img src="IMG/WMPHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					We Must Prepare</a>
+					<br>
+					<br>Released Aug 5, 2018
+					<br>15 week project, 24 collaborators
+					<br>
+					<br>• Programmed the HTML5 audio engine.  Features include dynamically mixed audio loops, a robust music manager, and multiple audio group volumes
+					<br>• Music integration
+					<br>• Most of the sound integration
+					<br>• Some UI design and relevant integration for the option menus
+					<br>• Ambience and UI sound design
+					<br>• Wrote a "Harvest Moon/Stardew Valley" style music track</div>
+				</div>
+
+				<div class="card games coder implement sound" id="DreamRacer">
+					<a href="https://gamkedo.itch.io/dream-racer">
+					<div class="thumbcase">
+						<img src="IMG/DreamRacerHold.png">
+						<img src="IMG/DreamRacerHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Dream Racer</a>
+					<br>
+					<br>Released Jul 29, 2018
+					<br>11 weeks, 23 collaborators
+					<br>
+					<br>• Wrote the HTML5 audio engine.  Includes layer blended sound mixing based on in game parameters
+					<br>• Designed and integrated the dynamic car sounds.  Features include RPM accurate engine sounds and speed based brake sounds</div>
+				</div>
+
+				<div class="card games coder" id="Arcaninjadroid">
+					<a href="https://raytex.itch.io/arcaninjadroid">
+					<div class="thumbcase">
+						<img src="IMG/RKCHold.png">
+						<img src="IMG/RKCHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Arcaninjadroid: Kitty Catastrophe</a>
+					<br>
+					<br>Released Sept 30, 2018
+					<br>17 week project, 13 collaborators
+					<br>
+					<br>• Wrote and integrated the audio engine
+					<br>
+					<br>The project lead requested I come integrate the audio engine I had designed and already integrated into Ghosts of Neo Tokyo and Dream Racer.</div>
+				</div>
+
+				<div class="card games coder implement" id="GhostsInNeoTokyo">
+					<a href="https://gamkedo.itch.io/ghosts-of-neo-tokyo">
+					<div class="thumbcase">
+						<img src="IMG/GiNTHold.png">
+						<img src="IMG/GiNTHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Ghosts in Neo Tokyo</a>
+					<br>
+					<br>Released Apr 22, 2018
+					<br>10 week project, 18 collaborators.
+					<br>
+					<br>• Audio lead
+					<br>• Wrote the HTML5 audio engine, features included synced music crossfades
+					<br>• All music and sound integration</div>
+				</div>
+
+				<div class="card games coder" id="GType">
+					<a href="https://gamkedo.itch.io/g-type">
+					<div class="thumbcase">
+						<img src="IMG/GTHold.png">
+						<img src="IMG/GTHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					G-Type</a>
+					<br>
+					<br>Released Dec 9, 2018
+					<br>15 week project, 32 collaborators
+					<br>
+					<br>• Wrote the HTML5 audio engine using vanilla JavaScript</div>
+				</div>
+
+				<div class="card games music more" id="NethercardKingdom">
+					<a href="https://kornel.itch.io/nethercard-kingdom">
+					<div class="thumbcase">
+						<img src="IMG/NKHold.png">
+						<img src="IMG/NKHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Nethercard Kingdom</a>
+					<br>
+					<br>Released Jan 12, 2020
+					<br>13 week project, 14 collaborators
+					<br>
+					<br>• UI debugging and fixes for sliders and the pause menu
+					<br>• Wrote the action orchestra piece used during the deck management section</div>
+				</div>
+
+				<div class="card games music" id="SingedDirt">
+					<a href="https://lanthos.itch.io/singed-dirt">
+					<div class="thumbcase">
+						<img src="IMG/SingedDirtHold.png">
+						<img src="IMG/SingedDirtHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Singed Dirt</a>
+					<br>
+					<br>Released May 21, 2017
+					<br>20 week project, 13 collaborators
+					<br>
+					<br>• Composed a sci-fi western track for the gameplay music</div>
+				</div>
+
+				<div class="card games music" id="TinyRoboRacers">
+					<a href="https://spadxiii.itch.io/tiny-robo-racers">
+					<div class="thumbcase">
+						<img src="IMG/TRRHold.png">
+						<img src="IMG/TRRHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Tiny Robo Racers</a>
+					<br>
+					<br>Released Feb 11 2018
+					<br>10 week project, 9 collaborators
+					<br>
+					<br>• Composed an upbeat 8-bit/16-bit style racing music track</div>
+				</div>
+
+				<div class="card games music" id="WheelOfMisfortune">
+					<a href="https://cbutton01.itch.io/wheel-of-misfortune">
+					<div class="thumbcase">
+						<img src="IMG/WoMfHold.png">
+						<img src="IMG/WoMfHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Wheel of Misfortune</a>
+					<br>
+					<br>Released Feb 4, 2018
+					<br>9 week project, 9 collaborators
+					<br>
+					<br>• Composed music for the boss fight</div>
+				</div>
+
+				<div class="card games sound" id="ScrapMetalElites">
+					<a href="https://gamkedo.itch.io/scrap-metal-elites">
+					<div class="thumbcase">
+						<img src="IMG/SMEHold.png">
+						<img src="IMG/SMEHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Scrap Metal Elites</a>
+					<br>
+					<br>Released May 27, 2018
+					<br>16 week project, 13 collaborators
+					<br>
+					<br>• Designed all of the metal impact sounds
+					<br>• A member of the stadium crowd</div>
+				</div>
+
+				<div class="card games sound" id="SuperBuggyGolf">
+					<a href="https://gamkedo.itch.io/buggy-golf">
+					<div class="thumbcase">
+						<img src="IMG/SBGHold.png">
+						<img src="IMG/SBGHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Super Buggy Golf</a>
+					<br>
+					<br>Released May 6, 2018
+					<br>6 week project, 8 collaborators
+					<br>
+					<br>• Sound design for the ball
+					<br>
+					<br>When the game was nearing release I joined with this last hour contribution that was important for player feedback</div>
+				</div>
+
+				<div class="card games sound" id="Geogami">
+					<a href="https://evergames.itch.io/geogami">
+					<div class="thumbcase">
+						<img src="IMG/GeoHold.png">
+						<img src="IMG/GeoHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Geogami</a>
+					<br>
+					<br>Released Jun 10, 2018
+					<br>13 week project, 12 collaborators
+					<br>
+					<br>• Created over 20 sound assets</div>
+				</div>
+
+				<div class="card" id="template">
+					<a href="index.html">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Template</a>
+					<br>
+					<br></div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="footer">
+			mdfewkes@gmail.com
+		</div>
 
 		<script>
+			var currentChapter = "credits";
+			var currentPage = "games";
+			var currentTab = "games";
+
+			ToggleChapters(currentChapter);
+			TogglePage(currentPage);
+			ToggleTab(currentTab);
+
+			function FilterCards() {
+				var allCards = document.getElementsByClassName("card");
+				for (var i = 0; i < allCards.length; i++) {
+					allCards[i].style.display = "none";
+					if (allCards[i].classList.contains(currentPage)) {
+						allCards[i].style.display = "block";
+					}
+					if (!allCards[i].classList.contains(currentTab)) {
+						allCards[i].style.display = "none";
+					}
+				}
+			}
+
+			function ToggleTab(tab) {
+				currentTab = tab;
+
+				var allButtons = document.getElementsByClassName("buttonTab");
+				for (var i = 0; i < allButtons.length; i++) {
+					if (allButtons[i].classList.contains("checked")) {
+						allButtons[i].classList.remove("checked");
+					}
+					if (allButtons[i].classList.contains(currentTab)) {
+						allButtons[i].classList.add("checked");
+					}
+				}
+				FilterCards();
+			}
+
+			function TogglePage(page) {
+				currentPage = page;
+
+				var allChapters = document.getElementsByClassName("selector");
+				for (var i = 0; i < allChapters.length; i++) {
+					allChapters[i].style.display = "none";
+					if (allChapters[i].classList.contains(currentPage)) {
+						allChapters[i].style.display = "block";
+					}
+				}
+				var allButtons = document.getElementsByClassName("buttonPage");
+				for (var i = 0; i < allButtons.length; i++) {
+					if (allButtons[i].classList.contains("checked")) {
+						allButtons[i].classList.remove("checked");
+					}
+					if (allButtons[i].classList.contains(currentPage)) {
+						allButtons[i].classList.add("checked");
+					}
+				}
+				FilterCards();
+			}
+
+			function ToggleChapters(chapter) {
+				currentChapter = chapter;
+
+				var allChapters = document.getElementsByClassName("chapter");
+				for (var i = 0; i < allChapters.length; i++) {
+					allChapters[i].style.display = "none";
+					if (allChapters[i].classList.contains(currentChapter)) {
+						allChapters[i].style.display = "block";
+					}
+				}
+				var allButtons = document.getElementsByClassName("buttonChapter");
+				for (var i = 0; i < allButtons.length; i++) {
+					if (allButtons[i].classList.contains("checked")) {
+						allButtons[i].classList.remove("checked");
+					}
+					if (allButtons[i].classList.contains(currentChapter)) {
+						allButtons[i].classList.add("checked");
+					}
+					
+				}
+			}
 		</script>
 	</body>
 </html>
