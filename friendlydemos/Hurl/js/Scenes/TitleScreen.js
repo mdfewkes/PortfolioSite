@@ -1,0 +1,5 @@
+//Title Screen
+
+function modeTitle() {
+
+}
