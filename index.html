@@ -120,10 +120,10 @@
 		
 		<br>
 
-		<div style="display: none;">
+		<div>
 			<button onclick="ToggleChapters('home');" class="buttonChapter home" style="border-radius: 20px 0px 0px 20px;">
 			Home</button>
-			<button onclick="ToggleChapters('about');" class="buttonChapter about">
+			<button onclick="ToggleChapters('about');" class="buttonChapter about" style="display: none;">
 			About</button>
 			<button onclick="ToggleChapters('contact');" class="buttonChapter contact">
 			Contact</button>
@@ -134,7 +134,7 @@
 		<br>
 
 		<div class="chapter home">
-			Home
+			<iframe src="/friendlydemos/UnityAS/index.html" style="height: 960px; width: 643; border: none;"></iframe> 
 		</div>
 
 		<div class="chapter about">
@@ -142,7 +142,11 @@
 		</div>
 
 		<div class="chapter contact">
-			Contact
+			<br><br>
+			Michael Fewkes<br>
+			email: <a href="mailto:barney@example.com">mdfewkes@gmail.com</a><br>
+			twitter: <a href="https://twitter.com/mdfewkes">@mdfewkes</a><br>
+			instagram: <a href="https://www.instagram.com/mdfewkes/">@mdfewkes</a><br>
 		</div>
 
 		<div class="chapter credits">
@@ -180,7 +184,7 @@
 
 			<div class="cardTable">
 
-				<div class="card games coder implement sound" id="PaperToPail">
+				<div class="card games coder implement sound more" id="PaperToPail">
 					<a href="https://mdfewkes.itch.io/paper-to-pail">
 					<div class="thumbcase">
 						<img src="IMG/TempThumbnail.png">
@@ -542,6 +546,21 @@
 					<br>• Composed an upbeat 8-bit/16-bit style racing music track</div>
 				</div>
 
+				<div class="card games music" id="SpringfieldPropertyManager">
+					<a href="https://gamkedo.itch.io/springfield-property-manager">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					SpringfieldPropertyManager</a>
+					<br>
+					<br>Released Sept 27, 2020
+					<br>12 week project, 19 collaborators
+					<br>
+					<br>• Wrote the audio engine
+					<br>• Designed the city ambience sounds</div>
+				</div>
+
 				<div class="card games music" id="WheelOfMisfortune">
 					<a href="https://cbutton01.itch.io/wheel-of-misfortune">
 					<div class="thumbcase">
@@ -616,7 +635,7 @@
 		</div>
 
 		<div class="footer">
-			mdfewkes@gmail.com
+			<a href="mailto:barney@example.com">mdfewkes@gmail.com</a>
 		</div>
 
 		<script>
