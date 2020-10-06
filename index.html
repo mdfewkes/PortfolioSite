@@ -3,7 +3,12 @@
 	<head>
 		<meta charset="utf-8"/>
 		<title>Michael Fewkes: Music & Sound</title>
-		<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&display=swap" rel="stylesheet"> 
+		<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@700&display=swap" rel="stylesheet">  
+		<link rel="shortcut icon" href="friendlydemos/UnityAS/TemplateData/favicon.ico">
+		<link rel="stylesheet" href="friendlydemos/UnityAS/TemplateData/style.css">
+		<script src="friendlydemos/UnityAS/TemplateData/UnityProgress.js"></script>
+		<script src="friendlydemos/UnityAS/Build/UnityLoader.js"></script>
+		<script>var unityInstance = UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/build.json", {onProgress: UnityProgress});</script>
 		<style>
 			body {
 				--hiColor: #ffffff00;
@@ -134,7 +139,13 @@
 		<br>
 
 		<div class="chapter home">
-			<iframe src="https://mdfewkes.github.io/PortfolioSite/friendlydemos/UnityAS/" style="width: 960px; height: 643px; border: none;"></iframe> 
+			<div class="webgl-content">
+				<div id="unityContainer" style="width: 960px; height: 600px"></div>
+				<div class="footer">
+					<div class="webgl-logo"></div>
+					<div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+				</div>
+			</div>
 		</div>
 
 		<div class="chapter about">
