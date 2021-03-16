@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="friendlydemos/UnityAS/TemplateData/style.css">
 		<script src="friendlydemos/UnityAS/TemplateData/UnityProgress.js"></script>
 		<script src="friendlydemos/UnityAS/Build/UnityLoader.js"></script>
-		<script>var unityInstance = UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/build.json", {onProgress: UnityProgress});</script>
+		<script>UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/UnityAS.json");</script>
 		<style>
 			body {
 				--hiColor: #ffffff00;
@@ -20,6 +20,7 @@
 				background-attachment: fixed;
 				text-align: center;
 				min-height: 100vh;
+				margin: 0px;
 			}
 			a {
 				text-align: center;
@@ -28,7 +29,7 @@
 				color: black;
 			}
 			.headroom {
-				min-height: 50px;
+				min-height: 25px;
 			}
 			.footer {
 				margin: 50px;
@@ -139,9 +140,8 @@
 		<br>
 
 		<div class="chapter home">
-			<div class="webgl-content">
-				<div id="unityContainer" style="width: 960px; height: 600px; position: relative; display: inline-block;"></div>
-			</div>
+			<div class="webgl-content" id="unityContainer" style="width: 960px; height: 600px; display: inline-block; top: 550px;"></div>
+			<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 		</div>
 
 		<div class="chapter about">
