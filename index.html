@@ -8,7 +8,7 @@
 		<link rel="stylesheet" href="friendlydemos/UnityAS/TemplateData/style.css">
 		<script src="friendlydemos/UnityAS/TemplateData/UnityProgress.js"></script>
 		<script src="friendlydemos/UnityAS/Build/UnityLoader.js"></script>
-		<script>var unityInstance = UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/build.json", {onProgress: UnityProgress});</script>
+		<script>//var unityInstance = UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/build.json", {onProgress: UnityProgress});</script>
 		<style>
 			body {
 				--hiColor: #ffffff00;
@@ -121,14 +121,14 @@
 	<body>
 		<div class="headroom"></div>
 		<div class="title">Michael Fewkes</div>
-		<div class="subtitle">Technical Sound Designer, Audio Implementer/Coder</div>
+		<div class="subtitle">Technical Music Designer, Audio Implementer/Coder</div>
 		
 		<br>
 
 		<div>
 			<button onclick="ToggleChapters('home');" class="buttonChapter home" style="border-radius: 20px 0px 0px 20px;">
 			Demo</button>
-			<button onclick="ToggleChapters('about');" class="buttonChapter about" style="display: none;">
+			<button onclick="ToggleChapters('about');" class="buttonChapter about">
 			About</button>
 			<button onclick="ToggleChapters('contact');" class="buttonChapter contact">
 			Contact</button>
@@ -151,9 +151,10 @@
 		<div class="chapter contact">
 			<br><br>
 			Michael Fewkes<br>
-			email: <a href="mailto:barney@example.com">mdfewkes@gmail.com</a><br>
-			twitter: <a href="https://twitter.com/mdfewkes">@mdfewkes</a><br>
-			instagram: <a href="https://www.instagram.com/mdfewkes/">@mdfewkes</a><br>
+			email: <a href="mailto:mdfewkes@gmail.com" target="_blank">mdfewkes@gmail.com</a><br>
+			twitter: <a href="https://twitter.com/mdfewkes" target="_blank">@mdfewkes</a><br>
+			<br><br>
+			<img src="IMG/MyFace.png">
 		</div>
 
 		<div class="chapter credits">
@@ -191,8 +192,37 @@
 
 			<div class="cardTable">
 
+				<div class="card games music" id="SpringfieldPropertyManager">
+					<a href="https://gamkedo.itch.io/springfield-property-manager" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					SpringfieldPropertyManager</a>
+					<br>
+					<br>Released Sept 27, 2020
+					<br>12 week project, 19 collaborators
+					<br>
+					<br>• Wrote the audio engine
+					<br>• Designed the city ambience sounds</div>
+				</div>
+
+				<div class="card games music" id="XenoJackers">
+					<a href="https://gamkedo.itch.io/xeno-jackers" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Xeno Jackers</a>
+					<br>
+					<br>Released July 26, 2020
+					<br>11 week project, 11 collaborators
+					<br>
+					<br>• Wrote several classic retro music tracks.  The title music, level 2, and level 3</div>
+				</div>
+
 				<div class="card games coder implement sound more" id="PaperToPail">
-					<a href="https://mdfewkes.itch.io/paper-to-pail">
+					<a href="https://mdfewkes.itch.io/paper-to-pail" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/TempThumbnail.png">
 						<img src="IMG/TempThumbnail2.png" class="thumbhover">
@@ -210,147 +240,8 @@
 					<br>• Sound design</div>
 				</div>
 
-				<div class="card games coder implement" id="MysticChambers">
-					<a href="https://bacstudios.itch.io/mystic-chambers">
-					<div class="thumbcase">
-						<img src="IMG/TempThumbnail.png">
-						<img src="IMG/TempThumbnail2.png" class="thumbhover">
-					</div><div class="textcase">
-					Mystic Chambers</a>
-					<br>
-					<br>Released Jun 28, 2020
-					<br>16 week project, 11 collaborators
-					<br>
-					<br>• Programmed the 3d audio engine.  Features include 3D panning, dynamic reverb, sound propagation, occlusion, and dynamic reverb</div>
-				</div>
-
-				<div class="card games music sound" id="Muxgic">
-					<a href="https://runeberg.itch.io/muxgic">
-					<div class="thumbcase">
-						<img src="IMG/MuxgicHold.png">
-						<img src="IMG/MuxgicHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Muxgic</a>
-					<br>
-					<br>Released Sep 03, 2017
-					<br>2 week jam. 2 person team
-					<br>
-					<br>• Designed the instrument in UE4
-					<br>• Sound design, including instrument sounds
-					<br>• Planned and composed the interactive music</div>
-				</div>
-
-				<div class="card games implement sound" id="Overclocked">
-					<a href="https://store.steampowered.com/app/827220/Overclocked_The_Aclockalypse/">
-					<div class="thumbcase">
-						<img src="IMG/TempThumbnail.png">
-						<img src="IMG/TempThumbnail2.png" class="thumbhover">
-					</div><div class="textcase">
-					Overclocked: The Aclockalypse</a>
-					<br>
-					<br>Released Apr 27 - 2018
-					<br>4 month capstone project, 18 team members
-					<br>
-					<br>• Managed Wwise project
-					<br>• Integrated Wwise into Unity
-					<br>• Sound design
-					<br>• Planned and engineered the music recording session</div>
-				</div>
-
-				<div class="card games implement music" id="TowersOfSpace">
-					<a href="https://spadxiii.itch.io/towers-of-space">
-					<div class="thumbcase">
-						<img src="IMG/ToSHold.png">
-						<img src="IMG/ToSHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Towers of Space</a>
-					<br>
-					<br>Released Jul 9, 2017
-					<br>18 week project, 13 week project
-					<br>
-					<br>• Maintained the Wwise project used as the audio middleware
-					<br>• Wrote one of the 2 metal music tracks used in the game</div>
-				</div>
-
-				<div class="card games implement sound more" id="SeaOfficiallyLost">
-					<a href="https://lanthos.itch.io/sea-officially-lost">
-					<div class="thumbcase">
-						<img src="IMG/SOLHold.png">
-						<img src="IMG/SOLHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Sea: Officially Lost</a>
-					<br>
-					<br>Released Dec 17, 2017
-					<br>20 week project, 18 collaborators
-					<br>
-					<br>• Managed the Wwise project
-					<br>• Audio middleware integration
-					<br>• Involved in much of the UI integration
-					<br>• All sound design</div>
-				</div>
-
-				<div class="card games implement sound" id="Melody">
-					<a href="https://store.steampowered.com/app/471200/Melody/">
-					<div class="thumbcase">
-						<img src="IMG/TempThumbnail.png">
-						<img src="IMG/TempThumbnail2.png" class="thumbhover">
-					</div><div class="textcase">
-					Melody</a>
-					<br>
-					<br>Released Oct 5, 2017
-					<br>2 day jam plus dev-time, 4 collaborators
-					<br>
-					<br>• Designed instrument interaction
-					<br>• Managed FMOD project
-					<br>• Recorded marimba samples</div>
-				</div>
-
-				<div class="card games implement music" id="OperationLifeline">
-					<a href="https://brnielsen.itch.io/operationlifeline">
-					<div class="thumbcase">
-						<img src="IMG/OperationLifelineHold.png">
-						<img src="IMG/OperationLifelineHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Operation Lifeline</a>
-					<br>
-					<br>Released Feb 9, 2020
-					<br>9 week project, 11 collaborators
-					<br>
-					<br>• Responsible for the FMOD project and integration
-					<br>• Wrote  the actiony synthwave track used for level 2</div>
-				</div>
-
-				<div class="card games music" id="XenoJackers">
-					<a href="https://gamkedo.itch.io/xeno-jackers">
-					<div class="thumbcase">
-						<img src="IMG/TempThumbnail.png">
-						<img src="IMG/TempThumbnail2.png" class="thumbhover">
-					</div><div class="textcase">
-					Xeno Jackers</a>
-					<br>
-					<br>11 week project, 11 collaborators
-					<br>9 week project, 11 collaborators
-					<br>
-					<br>• Wrote several classic retro music tracks.  The title music, level 2, and level 3</div>
-				</div>
-
-				<div class="card games implement music sound" id="HiddenPassageways">
-					<a href="https://gamkedo.itch.io/hidden-passageways">
-					<div class="thumbcase">
-						<img src="IMG/HiddenPassagewaysHold.png">
-						<img src="IMG/HiddenPassagewaysHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Hidden Passageways</a>
-					<br>
-					<br>Released Oct 14, 2018
-					<br>21 week project, 31 collaborators
-					<br>
-					<br>• Co-managed the FMOD project used for the audio middleware
-					<br>• Sound and music for the Word Wall section of the game</div>
-				</div>
-
 				<div class="card games coder" id="HiddenPassages2">
-					<a href="https://gamkedo.itch.io/hidden-passages-2">
+					<a href="https://gamkedo.itch.io/hidden-passages-2" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/TempThumbnail.png">
 						<img src="IMG/TempThumbnail2.png" class="thumbhover">
@@ -365,8 +256,37 @@
 					<br>In keeping with the game's theme, these instruments were intended to be cryptic, but ultimately functional.  If you can figure out how they work, you should be able to play any tune on them you could with the real instrument.</div>
 				</div>
 
+				<div class="card games coder implement" id="MysticChambers">
+					<a href="https://bacstudios.itch.io/mystic-chambers" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Mystic Chambers</a>
+					<br>
+					<br>Released Jun 28, 2020
+					<br>16 week project, 11 collaborators
+					<br>
+					<br>• Programmed the 3d audio engine.  Features include 3D panning, dynamic reverb, sound propagation, occlusion, and dynamic reverb</div>
+				</div>
+
+				<div class="card games coder implement" id="Flipside">
+					<a href="https://gamkedo.itch.io/flipside" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/FlipsideHold.png">
+						<img src="IMG/FlipsideHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Flipside</a>
+					<br>
+					<br>Released Apr 5, 2020
+					<br>13 weeks project, 15 collaborators
+					<br>
+					<br>• Programmed the audio engine using the WebAudioAPI.  Features including 2D positional audio and synced music track crossfading
+					<br>• All of the sound integration</div>
+				</div>
+
 				<div class="card games coder implement music sound" id="Bundle30">
-					<a href="https://stebssbets.itch.io/bundle-of-30-language-games">
+					<a href="https://stebssbets.itch.io/bundle-of-30-language-games" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/TempThumbnail.png">
 						<img src="IMG/TempThumbnail2.png" class="thumbhover">
@@ -381,22 +301,8 @@
 					<br>• 6 background music tracks and 2 transition music tracks</div>
 				</div>
 
-				<div class="card games coder" id="RadiantLaserCross">
-					<a href="https://klaim.itch.io/radiant-laser-cross">
-					<div class="thumbcase">
-						<img src="IMG/RLCHold.png">
-						<img src="IMG/RLCHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Radiant Laser Cross</a>
-					<br>
-					<br>Released Dec 16, 2018
-					<br>11 week project, 11 collaborators
-					<br>
-					<br>• Programmed the dynamic music engine.  Adds and subtracts music layers depending on in game parameters</div>
-				</div>
-
 				<div class="card games coder implement more" id="ArtilleryFodder">
-					<a href="https://mdfewkes.itch.io/artillery-fodder">
+					<a href="https://mdfewkes.itch.io/artillery-fodder" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/ArtilleryFodderHold.png">
 						<img src="IMG/ArtilleryFodderHover.gif" class="thumbhover">
@@ -415,23 +321,97 @@
 					<br>• Most UI and weapons code</div>
 				</div>
 
-				<div class="card games coder implement" id="Flipside">
-					<a href="https://gamkedo.itch.io/flipside">
+				<div class="card games implement music" id="OperationLifeline">
+					<a href="https://brnielsen.itch.io/operationlifeline" target="_blank">
 					<div class="thumbcase">
-						<img src="IMG/FlipsideHold.png">
-						<img src="IMG/FlipsideHover.gif" class="thumbhover">
+						<img src="IMG/OperationLifelineHold.png">
+						<img src="IMG/OperationLifelineHover.gif" class="thumbhover">
 					</div><div class="textcase">
-					Flipside</a>
+					Operation Lifeline</a>
 					<br>
-					<br>Released Apr 5, 2020
-					<br>13 weeks project, 15 collaborators
+					<br>Released Feb 9, 2020
+					<br>9 week project, 11 collaborators
 					<br>
-					<br>• Programmed the audio engine using the WebAudioAPI.  Features including 2D positional audio and synced music track crossfading
-					<br>• All of the sound integration</div>
+					<br>• Responsible for the FMOD project and integration
+					<br>• Wrote  the actiony synthwave track used for level 2</div>
+				</div>
+
+				<div class="card games music more" id="NethercardKingdom">
+					<a href="https://kornel.itch.io/nethercard-kingdom" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/NKHold.png">
+						<img src="IMG/NKHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Nethercard Kingdom</a>
+					<br>
+					<br>Released Jan 12, 2020
+					<br>13 week project, 14 collaborators
+					<br>
+					<br>• UI debugging and fixes for sliders and the pause menu
+					<br>• Wrote the action orchestra piece used during the deck management section</div>
+				</div>
+
+				<div class="card games coder" id="RadiantLaserCross">
+					<a href="https://klaim.itch.io/radiant-laser-cross" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/RLCHold.png">
+						<img src="IMG/RLCHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Radiant Laser Cross</a>
+					<br>
+					<br>Released Dec 16, 2018
+					<br>11 week project, 11 collaborators
+					<br>
+					<br>• Programmed the dynamic music engine.  Adds and subtracts music layers depending on in game parameters</div>
+				</div>
+
+				<div class="card games coder" id="GType">
+					<a href="https://gamkedo.itch.io/g-type" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/GTHold.png">
+						<img src="IMG/GTHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					G-Type</a>
+					<br>
+					<br>Released Dec 9, 2018
+					<br>15 week project, 32 collaborators
+					<br>
+					<br>• Wrote the HTML5 audio engine using vanilla JavaScript</div>
+				</div>
+
+				<div class="card games implement music sound" id="HiddenPassageways">
+					<a href="https://gamkedo.itch.io/hidden-passageways" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/HiddenPassagewaysHold.png">
+						<img src="IMG/HiddenPassagewaysHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Hidden Passageways</a>
+					<br>
+					<br>Released Oct 14, 2018
+					<br>21 week project, 31 collaborators
+					<br>
+					<br>• Co-managed the FMOD project used for the audio middleware
+					<br>• Sound and music for the Word Wall section of the game</div>
+				</div>
+
+				<div class="card games coder" id="Arcaninjadroid">
+					<a href="https://raytex.itch.io/arcaninjadroid" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/RKCHold.png">
+						<img src="IMG/RKCHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Arcaninjadroid: Kitty Catastrophe</a>
+					<br>
+					<br>Released Sept 30, 2018
+					<br>17 week project, 13 collaborators
+					<br>
+					<br>• Wrote and integrated the audio engine
+					<br>
+					<br>The project lead requested I come integrate the audio engine I had designed and already integrated into Ghosts of Neo Tokyo and Dream Racer.</div>
 				</div>
 
 				<div class="card games coder implement music sound more" id="WeMustPrepare">
-					<a href="https://lanthos.itch.io/we-must-prepare">
+					<a href="https://lanthos.itch.io/we-must-prepare" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/WMPHold.png">
 						<img src="IMG/WMPHover.gif" class="thumbhover">
@@ -450,7 +430,7 @@
 				</div>
 
 				<div class="card games coder implement sound" id="DreamRacer">
-					<a href="https://gamkedo.itch.io/dream-racer">
+					<a href="https://gamkedo.itch.io/dream-racer" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/DreamRacerHold.png">
 						<img src="IMG/DreamRacerHover.gif" class="thumbhover">
@@ -464,126 +444,22 @@
 					<br>• Designed and integrated the dynamic car sounds.  Features include RPM accurate engine sounds and speed based brake sounds</div>
 				</div>
 
-				<div class="card games coder" id="Arcaninjadroid">
-					<a href="https://raytex.itch.io/arcaninjadroid">
+				<div class="card games sound" id="Geogami">
+					<a href="https://evergames.itch.io/geogami" target="_blank">
 					<div class="thumbcase">
-						<img src="IMG/RKCHold.png">
-						<img src="IMG/RKCHover.gif" class="thumbhover">
+						<img src="IMG/GeoHold.png">
+						<img src="IMG/GeoHover.gif" class="thumbhover">
 					</div><div class="textcase">
-					Arcaninjadroid: Kitty Catastrophe</a>
+					Geogami</a>
 					<br>
-					<br>Released Sept 30, 2018
-					<br>17 week project, 13 collaborators
+					<br>Released Jun 10, 2018
+					<br>13 week project, 12 collaborators
 					<br>
-					<br>• Wrote and integrated the audio engine
-					<br>
-					<br>The project lead requested I come integrate the audio engine I had designed and already integrated into Ghosts of Neo Tokyo and Dream Racer.</div>
-				</div>
-
-				<div class="card games coder implement" id="GhostsInNeoTokyo">
-					<a href="https://gamkedo.itch.io/ghosts-of-neo-tokyo">
-					<div class="thumbcase">
-						<img src="IMG/GiNTHold.png">
-						<img src="IMG/GiNTHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Ghosts in Neo Tokyo</a>
-					<br>
-					<br>Released Apr 22, 2018
-					<br>10 week project, 18 collaborators.
-					<br>
-					<br>• Audio lead
-					<br>• Wrote the HTML5 audio engine, features included synced music crossfades
-					<br>• All music and sound integration</div>
-				</div>
-
-				<div class="card games coder" id="GType">
-					<a href="https://gamkedo.itch.io/g-type">
-					<div class="thumbcase">
-						<img src="IMG/GTHold.png">
-						<img src="IMG/GTHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					G-Type</a>
-					<br>
-					<br>Released Dec 9, 2018
-					<br>15 week project, 32 collaborators
-					<br>
-					<br>• Wrote the HTML5 audio engine using vanilla JavaScript</div>
-				</div>
-
-				<div class="card games music more" id="NethercardKingdom">
-					<a href="https://kornel.itch.io/nethercard-kingdom">
-					<div class="thumbcase">
-						<img src="IMG/NKHold.png">
-						<img src="IMG/NKHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Nethercard Kingdom</a>
-					<br>
-					<br>Released Jan 12, 2020
-					<br>13 week project, 14 collaborators
-					<br>
-					<br>• UI debugging and fixes for sliders and the pause menu
-					<br>• Wrote the action orchestra piece used during the deck management section</div>
-				</div>
-
-				<div class="card games music" id="SingedDirt">
-					<a href="https://lanthos.itch.io/singed-dirt">
-					<div class="thumbcase">
-						<img src="IMG/SingedDirtHold.png">
-						<img src="IMG/SingedDirtHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Singed Dirt</a>
-					<br>
-					<br>Released May 21, 2017
-					<br>20 week project, 13 collaborators
-					<br>
-					<br>• Composed a sci-fi western track for the gameplay music</div>
-				</div>
-
-				<div class="card games music" id="TinyRoboRacers">
-					<a href="https://spadxiii.itch.io/tiny-robo-racers">
-					<div class="thumbcase">
-						<img src="IMG/TRRHold.png">
-						<img src="IMG/TRRHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Tiny Robo Racers</a>
-					<br>
-					<br>Released Feb 11 2018
-					<br>10 week project, 9 collaborators
-					<br>
-					<br>• Composed an upbeat 8-bit/16-bit style racing music track</div>
-				</div>
-
-				<div class="card games music" id="SpringfieldPropertyManager">
-					<a href="https://gamkedo.itch.io/springfield-property-manager">
-					<div class="thumbcase">
-						<img src="IMG/TempThumbnail.png">
-						<img src="IMG/TempThumbnail2.png" class="thumbhover">
-					</div><div class="textcase">
-					SpringfieldPropertyManager</a>
-					<br>
-					<br>Released Sept 27, 2020
-					<br>12 week project, 19 collaborators
-					<br>
-					<br>• Wrote the audio engine
-					<br>• Designed the city ambience sounds</div>
-				</div>
-
-				<div class="card games music" id="WheelOfMisfortune">
-					<a href="https://cbutton01.itch.io/wheel-of-misfortune">
-					<div class="thumbcase">
-						<img src="IMG/WoMfHold.png">
-						<img src="IMG/WoMfHover.gif" class="thumbhover">
-					</div><div class="textcase">
-					Wheel of Misfortune</a>
-					<br>
-					<br>Released Feb 4, 2018
-					<br>9 week project, 9 collaborators
-					<br>
-					<br>• Composed music for the boss fight</div>
+					<br>• Created over 20 sound assets</div>
 				</div>
 
 				<div class="card games sound" id="ScrapMetalElites">
-					<a href="https://gamkedo.itch.io/scrap-metal-elites">
+					<a href="https://gamkedo.itch.io/scrap-metal-elites" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/SMEHold.png">
 						<img src="IMG/SMEHover.gif" class="thumbhover">
@@ -598,7 +474,7 @@
 				</div>
 
 				<div class="card games sound" id="SuperBuggyGolf">
-					<a href="https://gamkedo.itch.io/buggy-golf">
+					<a href="https://gamkedo.itch.io/buggy-golf" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/SBGHold.png">
 						<img src="IMG/SBGHover.gif" class="thumbhover">
@@ -613,22 +489,147 @@
 					<br>When the game was nearing release I joined with this last hour contribution that was important for player feedback</div>
 				</div>
 
-				<div class="card games sound" id="Geogami">
-					<a href="https://evergames.itch.io/geogami">
+				<div class="card games implement sound" id="Overclocked">
+					<a href="https://store.steampowered.com/app/827220/Overclocked_The_Aclockalypse/" target="_blank">
 					<div class="thumbcase">
-						<img src="IMG/GeoHold.png">
-						<img src="IMG/GeoHover.gif" class="thumbhover">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
 					</div><div class="textcase">
-					Geogami</a>
+					Overclocked: The Aclockalypse</a>
 					<br>
-					<br>Released Jun 10, 2018
-					<br>13 week project, 12 collaborators
+					<br>Released Apr 27 - 2018
+					<br>4 month capstone project, 18 team members
 					<br>
-					<br>• Created over 20 sound assets</div>
+					<br>• Managed Wwise project
+					<br>• Integrated Wwise into Unity
+					<br>• Sound design
+					<br>• Planned and engineered the music recording session</div>
+				</div>
+
+				<div class="card games coder implement" id="GhostsInNeoTokyo">
+					<a href="https://gamkedo.itch.io/ghosts-of-neo-tokyo" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/GiNTHold.png">
+						<img src="IMG/GiNTHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Ghosts in Neo Tokyo</a>
+					<br>
+					<br>Released Apr 22, 2018
+					<br>10 week project, 18 collaborators.
+					<br>
+					<br>• Audio lead
+					<br>• Wrote the HTML5 audio engine, features included synced music crossfades
+					<br>• All music and sound integration</div>
+				</div>
+
+				<div class="card games music" id="TinyRoboRacers">
+					<a href="https://spadxiii.itch.io/tiny-robo-racers" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/TRRHold.png">
+						<img src="IMG/TRRHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Tiny Robo Racers</a>
+					<br>
+					<br>Released Feb 11 2018
+					<br>10 week project, 9 collaborators
+					<br>
+					<br>• Composed an upbeat 8-bit/16-bit style racing music track</div>
+				</div>
+
+				<div class="card games music" id="WheelOfMisfortune">
+					<a href="https://cbutton01.itch.io/wheel-of-misfortune" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/WoMfHold.png">
+						<img src="IMG/WoMfHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Wheel of Misfortune</a>
+					<br>
+					<br>Released Feb 4, 2018
+					<br>9 week project, 9 collaborators
+					<br>
+					<br>• Composed music for the boss fight</div>
+				</div>
+
+				<div class="card games implement sound more" id="SeaOfficiallyLost" target="_blank">
+					<a href="https://lanthos.itch.io/sea-officially-lost">
+					<div class="thumbcase">
+						<img src="IMG/SOLHold.png">
+						<img src="IMG/SOLHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Sea: Officially Lost</a>
+					<br>
+					<br>Released Dec 17, 2017
+					<br>20 week project, 18 collaborators
+					<br>
+					<br>• Managed the Wwise project
+					<br>• Audio middleware integration
+					<br>• Involved in much of the UI integration
+					<br>• All sound design</div>
+				</div>
+
+				<div class="card games implement sound" id="Melody">
+					<a href="https://store.steampowered.com/app/471200/Melody/" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/TempThumbnail.png">
+						<img src="IMG/TempThumbnail2.png" class="thumbhover">
+					</div><div class="textcase">
+					Melody</a>
+					<br>
+					<br>Released Oct 5, 2017
+					<br>2 day jam plus dev-time, 4 collaborators
+					<br>
+					<br>• Designed instrument interaction
+					<br>• Managed FMOD project
+					<br>• Recorded marimba samples</div>
+				</div>
+
+				<div class="card games music sound" id="Muxgic">
+					<a href="https://runeberg.itch.io/muxgic" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/MuxgicHold.png">
+						<img src="IMG/MuxgicHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Muxgic</a>
+					<br>
+					<br>Released Sep 03, 2017
+					<br>2 week jam. 2 person team
+					<br>
+					<br>• Designed the instrument in UE4
+					<br>• Sound design, including instrument sounds
+					<br>• Planned and composed the interactive music</div>
+				</div>
+
+				<div class="card games implement music" id="TowersOfSpace" target="_blank">
+					<a href="https://spadxiii.itch.io/towers-of-space">
+					<div class="thumbcase">
+						<img src="IMG/ToSHold.png">
+						<img src="IMG/ToSHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Towers of Space</a>
+					<br>
+					<br>Released Jul 9, 2017
+					<br>18 week project, 13 week project
+					<br>
+					<br>• Maintained the Wwise project used as the audio middleware
+					<br>• Wrote one of the 2 metal music tracks used in the game</div>
+				</div>
+
+				<div class="card games music" id="SingedDirt">
+					<a href="https://lanthos.itch.io/singed-dirt" target="_blank">
+					<div class="thumbcase">
+						<img src="IMG/SingedDirtHold.png">
+						<img src="IMG/SingedDirtHover.gif" class="thumbhover">
+					</div><div class="textcase">
+					Singed Dirt</a>
+					<br>
+					<br>Released May 21, 2017
+					<br>20 week project, 13 collaborators
+					<br>
+					<br>• Composed a sci-fi western track for the gameplay music</div>
 				</div>
 
 				<div class="card" id="template">
-					<a href="index.html">
+					<a href="index.html" target="_blank">
 					<div class="thumbcase">
 						<img src="IMG/TempThumbnail.png">
 						<img src="IMG/TempThumbnail2.png" class="thumbhover">
@@ -646,7 +647,7 @@
 		</div>
 
 		<script>
-			var currentChapter = "credits";
+			var currentChapter = "about";
 			var currentPage = "games";
 			var currentTab = "games";
 
