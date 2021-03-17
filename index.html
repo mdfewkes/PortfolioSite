@@ -8,7 +8,6 @@
 		<link rel="stylesheet" href="friendlydemos/UnityAS/TemplateData/style.css">
 		<script src="friendlydemos/UnityAS/TemplateData/UnityProgress.js"></script>
 		<script src="friendlydemos/UnityAS/Build/UnityLoader.js"></script>
-		<script>UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/UnityAS.json");</script>
 		<style>
 			body {
 				--hiColor: #ffffff00;
@@ -127,7 +126,7 @@
 		<br>
 
 		<div>
-			<button onclick="ToggleChapters('home');" class="buttonChapter home" style="border-radius: 20px 0px 0px 20px;">
+			<button onclick="ToggleChapters('home'); LoadDemo();" class="buttonChapter home" style="border-radius: 20px 0px 0px 20px;">
 			Demo</button>
 			<button onclick="ToggleChapters('about');" class="buttonChapter about">
 			About</button>
@@ -803,10 +802,22 @@
 			var currentChapter = "credits";
 			var currentPage = "games";
 			var currentTab = "games";
+			var startedDemo = false;
 
 			ToggleChapters(currentChapter);
 			TogglePage(currentPage);
 			ToggleTab(currentTab);
+
+			window.onload = function() {
+				LoadDemo();
+			}
+
+			function LoadDemo() {
+				if (!startedDemo) {
+					UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/UnityAS.json");
+					startedDemo = true;
+				}
+			}
 
 			function FilterCards() {
 				var allCards = document.getElementsByClassName("card");
