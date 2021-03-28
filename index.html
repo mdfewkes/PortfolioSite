@@ -122,7 +122,7 @@
 		<br>
 
 		<div>
-			<button onclick="ToggleChapters('home'); LoadDemo();" class="buttonChapter home" style="border-radius: 20px 0px 0px 20px;">
+			<button onclick="ToggleChapters('home');" class="buttonChapter home" style="border-radius: 20px 0px 0px 20px;">
 			Demo</button>
 			<button onclick="ToggleChapters('about');" class="buttonChapter about">
 			About</button>
@@ -140,10 +140,13 @@
 		</div>
 
 		<div class="chapter about" style="max-width: 550px; margin: 2px auto; text-align: left;">
-			<br><br>Hello my name is Michael Fewkes. My passion for audio design began nearly 7 years ago. Born in California and raised in Salt Lake City, I attended college to get a Music Recording Technology degree. I currently reside in Millcreek, Utah with my fiance (who I happened to meet while obtaining my degree,) and my mini schnauzer named Percy. 
-			<br><br>In my free time you’ll find me playing my ukulele and banjo, as well as being part of musical ensembles such as “The Backseat,” a band I was a part of for 3 years. I also enjoy late night walks and canyon drives. Thankfully my line of work and my hobbies coincide. From a young age, I began coding simple games on my parents computer. Which has now led to my sound, music, and audio integration to be included in over 30 games. 
-			<br><br>The many opportunities I have been presented with allowed me to showcase my talent and years of experience in productions, for example the stage play, “Silent Sky” in which my music won the award for “Excellence In Sound Design.” Being hired by a local Utah indie game studio has furthered my versatility in this field. The range of these possibilities and endless hardwork have made me into the person I am today, both in the industry and my personal life. 
-			<br><br>Every aspect of my work such as theatrical design, live mixing, film production recording, unity development, sound design, and so forth, is what helps inform me in every specific aspect of a particular project I work on. Each project I’m a part of has its own creative entity and I continue to be inspired by it all everyday. 
+			<br><br>Hello my name is Michael Fewkes. My passion for audio design began nearly 7 years ago. Born in California and raised in Utah, I attended college in Salt Lake City to get a degree in Music Recording Technology. I enjoy my work as a Technical Audio Designer, doing sound music, and audio integration for games. I also have expirience with sound for film, theatre, and live events.
+			<br><br>From a young age, I began coding simple games on my parents computer. At the same time, I was developing myself as a musician. Early in college I discover game audio, combining my love for game development with my passion for music and sound. I find the challenges of interactive audio fascinating, and enjoy learning new ways of accomplishing responsive and dynamic audio. I have a particular love of interactive music, and the underlying systems that make it happen. 
+			<br><br>In the years since I discovered this intersection, I have worked on over 30 games. Coding music and audio systems from scratch in C# and Javascript, or utilizing audio middleware such as Wwise and FMOD. I've worked in Unity, Unreal, Godot, and on HTML5 games.  I enjoy the technical details on making sound happen and making music responsive. I love implementing assets and designs from both sound designers and composers, collaborating to make imersive and informative soundscapes.
+			<br><br>Most recently I worked on Dream, a live virtual Shakespearian theatre production using motion capture in the Unreal game engine. I was responsible for system design, implementation, and delivery of all character sounds and foley. This project allowed me to synergize my love of sound, technology, and theatre.
+			<br><br>The many other opportunities I have been presented with have allowed me to showcase my talent and years of experience in productions, for example the stage play, “Silent Sky” in which my music won an award for “Excellence In Sound Design.” Being hired by a local Utah indie game studio has also furthered my versatility in this field. The range of these possibilities and endless hardwork have made me into the person I am today, both in the industry and my personal life. 
+			<br><br>In my free time you’ll find me playing my ukulele and banjo, as well as being part of musical ensembles such as “The Backseat,” a band I was a part of for 3 years. I also enjoy late night walks and canyon drives. Thankfully my line of work and my hobbies coincide.
+			<br><br>Every aspect of my work such as theatrical design, live mixing, film production recording, unity development, sound design, and so forth, is what helps inform me in every specific aspect of a particular project I work on. Each project I’m a part of has its own creative entity and I continue to be inspired by it all everyday.  I currently reside in Salt Lake City, Utah with my fiance and my mini schnauzer named Percy. 
 			<br><br>
 			<img src="IMG/zSoundBoardReach.jpg" style="width: 550px; height: auto;">
 
@@ -804,22 +807,10 @@
 			var currentChapter = "home";
 			var currentPage = "games";
 			var currentTab = "games";
-			var startedDemo = false;
 
 			ToggleChapters(currentChapter);
 			TogglePage(currentPage);
 			ToggleTab(currentTab);
-
-			window.onload = function() {
-				LoadDemo();
-			}
-
-			function LoadDemo() {
-				if (!startedDemo) {
-					UnityLoader.instantiate("unityContainer", "friendlydemos/UnityAS/Build/UnityAS.json");
-					startedDemo = true;
-				}
-			}
 
 			function FilterCards() {
 				var allCards = document.getElementsByClassName("card");
